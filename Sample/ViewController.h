@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+   
+    NSArray *tableData;
+    NSArray *thumbnails;
+    NSArray *prepTime;
+   
+}
+//-(IBAction)display;
 
 @end
 
