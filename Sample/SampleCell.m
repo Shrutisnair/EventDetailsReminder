@@ -11,7 +11,9 @@
 @implementation SampleCell
 
     @synthesize nameLabel = _nameLabel;
-    @synthesize prepTimeLabel = _prepTimeLabel;
-   // @synthesize thumbnailImageView = _thumbnailImageView;
-
+    @synthesize ratingLabel = _ratingLabel;
+    @synthesize dateLabel=_dateLabel;
+    @synthesize timeLabel=_timeLabel;
+    @synthesize locationLabel=_locationLabel;
+ //   @synthesize ratingLabel=_ratingLabel;
    @end

@@ -7,7 +7,8 @@
     "address": "Ramanbag School, Shanivar Peth, Pune, Maharashtra",
     "date": "1st Dec 2015",
     "time": "6:30pm",
-    "location":"Pune"
+    "location":"Pune",
+    "rating":"7.0"
 },
     {
         
@@ -17,7 +18,8 @@
         "address":"Pratibha Auditorium, Mumbai, Maharashtra",
         "date":"7th Aug 2015",
         "time": "8:00pm",
-        "location":" Mumbai"
+        "location":" Mumbai",
+        "rating":"6.8"
     },
     {
         
@@ -27,7 +29,8 @@
         "address":"B M Birla Auditorium, Jaipur,Rajasthan",
         "date": "5th July 2015",
         "time": "6:00pm",
-        "location":"Jaipur"
+        "location":"Jaipur",
+        "rating":"7.5"
     },
     {
         "eventID": "4",
@@ -36,7 +39,8 @@
         "address":"Little Theatre, Naiman Road, Mumbai, Maharashtra",
         "date": "10th June 2015",
         "time": "5:30pm",
-        "location": "Mumbai"
+        "location": "Mumbai",
+        "rating":"8.1"
     },
     {
         "eventID": "5",
@@ -46,7 +50,8 @@
         "address":"Nazrul Mancha, Rabindra Sarobar,Kolkata,West Bengal",
         "date": "25th January 2015",
         "time": "7:30pm",
-        "location": "Kolkata"
+        "location": "Kolkata",
+        "rating":"7.6"
     }
 ]
 

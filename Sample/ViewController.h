@@ -12,8 +12,12 @@
 {
    
     NSMutableArray *tableData;
+    NSMutableArray *tableTime;
+    NSMutableArray *tableDate;
+    NSMutableArray *tableLocation;
+    NSMutableArray *tableRating;
    // NSArray *thumbnails;
-    NSArray *prepTime;
+   // NSArray *prepTime;
    
 }
 //-(IBAction)display;

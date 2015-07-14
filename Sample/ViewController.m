@@ -28,6 +28,10 @@
    // NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&error];
     NSString* jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     tableData=[[NSMutableArray alloc] init] ;
+    tableTime=[[NSMutableArray alloc] init] ;
+    tableDate=[[NSMutableArray alloc] init] ;
+    tableLocation=[[NSMutableArray alloc]init];
+    tableRating=[[NSMutableArray alloc]init];
     NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSError *jsonError;
@@ -38,6 +42,14 @@
         NSDictionary *arrayResult = [allKeys objectAtIndex:i];
         NSString *name=[arrayResult objectForKey:@"eventName"];
         [tableData addObject:name];
+        NSString *time=[arrayResult objectForKey:@"time"];
+        [tableTime addObject:time];
+        NSString *date=[arrayResult objectForKey:@"date"];
+        [tableDate addObject:date];
+        NSString *location=[arrayResult objectForKey:@"location"];
+        [tableLocation addObject:location];
+        NSString *rating=[arrayResult objectForKey:@"rating"];
+        [tableRating addObject:rating];
 }
 }
 - (void)didReceiveMemoryWarning {
@@ -73,9 +85,13 @@
     }
     
     cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
-   // cell.thumbnailImageView.image=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+    cell.timeLabel.text = [tableTime objectAtIndex:indexPath.row];
+    cell.dateLabel.text = [tableDate objectAtIndex:indexPath.row];
+    cell.locationLabel.text = [tableLocation objectAtIndex:indexPath.row];
+    cell.ratingLabel.text=[tableRating objectAtIndex:indexPath.row];
+    // cell.thumbnailImageView.image=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rsz_1maxresdefault.png"]];
-    cell.prepTimeLabel.text=[prepTime objectAtIndex:indexPath.row];
+   // cell.prepTimeLabel.text=[prepTime objectAtIndex:indexPath.row];
     
     return cell;
 }
