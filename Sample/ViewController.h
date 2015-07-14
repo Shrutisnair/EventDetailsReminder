@@ -11,8 +11,8 @@
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
    
-    NSArray *tableData;
-    NSArray *thumbnails;
+    NSMutableArray *tableData;
+   // NSArray *thumbnails;
     NSArray *prepTime;
    
 }
