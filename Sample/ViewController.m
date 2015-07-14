@@ -40,19 +40,24 @@
     return [tableData count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SampleCell";
+    
+    SampleCell *cell = (SampleCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
     {
-        static NSString *simpleTableIdentifier = @"SimpleTableItem";
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        }
-        
-        cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
-        cell.imageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-        cell.prepTimeLabel.text = [prepTime objectAtIndex:indexPath.row];
-        return cell;
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SampleCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
+    cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+    cell.prepTimeLabel.text = [prepTime objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 78;
+}
 @end
