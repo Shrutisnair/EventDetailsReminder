@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface DetailsViewController : UIViewController <MKMapViewDelegate>
+@interface DetailsViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 @property NSString *eventName;
 @property NSString *eventDate;
 @property NSString *eventTime;
@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) NSArray *mapItemList;
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
-
-
+@property (nonatomic) CLLocationCoordinate2D userLocation;
+@property (nonatomic, strong) MKLocalSearch *localSearch;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSArray *places;
 @end
