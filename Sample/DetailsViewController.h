@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface DetailsViewController : UIViewController
-
+@interface DetailsViewController : UIViewController <MKMapViewDelegate>
 @property NSString *eventName;
 @property NSString *eventDate;
 @property NSString *eventTime;
@@ -24,4 +24,11 @@
 @property (nonatomic, weak) IBOutlet UILabel *eaddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *edescLabel;
 @property (nonatomic, weak) IBOutlet UILabel *eratingLabel;
+
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+
+@property (nonatomic, strong) NSArray *mapItemList;
+@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
+
+
 @end

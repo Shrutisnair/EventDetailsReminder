@@ -7,12 +7,24 @@
 //
 
 #import "DetailsViewController.h"
+#import "PlaceAnnotation.h"
 
 @interface DetailsViewController ()
 
+@property (nonatomic, strong) PlaceAnnotation *annotation;
+
 @end
 
+
+
+
+
+
 @implementation DetailsViewController
+
+
+
+@synthesize mapView;
 
 @synthesize eventName;
 @synthesize eventDate;
@@ -37,6 +49,7 @@
     self.eaddressLabel.text=eventAddress;
     self.edescLabel.text=eventDesc;
     self.eratingLabel.text=eventRating;
+    self.mapView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,4 +67,9 @@
 }
 */
 
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
 @end
