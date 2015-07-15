@@ -18,6 +18,8 @@
 @property NSString *eventRating;
 @property NSString *eventAddress;
 
+-(IBAction)dismiss;
+
 @property (nonatomic, weak) IBOutlet UILabel *enameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *edateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *etimeLabel;

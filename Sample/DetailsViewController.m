@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "PlaceAnnotation.h"
+#import"mapViewController.h"
 
 
 @interface DetailsViewController () 
@@ -57,7 +58,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (IBAction)dismiss {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -112,4 +115,12 @@ self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
 //[self.mapView setRegion:self.boundingRegion];
 }
 
- @end
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"locationmaps"]) {
+     //   NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        mapViewController *destViewController = segue.destinationViewController;
+        destViewController.boundRegion=self.boundingRegion;
+        destViewController.mapItem=[self.places objectAtIndex:0];
+    }
+}
+        @end
