@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SampleCell.h"
+#import "DetailsViewController.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,7 @@
 
 @implementation ViewController
 
+@synthesize tableView=_tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +34,8 @@
     tableDate=[[NSMutableArray alloc] init] ;
     tableLocation=[[NSMutableArray alloc]init];
     tableRating=[[NSMutableArray alloc]init];
+    tableAddress=[[NSMutableArray alloc]init];
+    tableDesc=[[NSMutableArray alloc]init];
     NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSError *jsonError;
@@ -50,7 +54,11 @@
         [tableLocation addObject:location];
         NSString *rating=[arrayResult objectForKey:@"rating"];
         [tableRating addObject:rating];
-}
+        NSString *address=[arrayResult objectForKey:@"address"];
+        [tableAddress addObject:address];
+        NSString *desc=[arrayResult objectForKey:@"description"];
+        [tableDesc addObject:desc];
+    }
 }
 - (void)didReceiveMemoryWarning {
     
@@ -98,5 +106,19 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 125;
+
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        DetailsViewController *destViewController = segue.destinationViewController;
+        destViewController.eventName = [tableData objectAtIndex:indexPath.row];
+        destViewController.eventDate = [tableDate objectAtIndex:indexPath.row];
+        destViewController.eventTime = [tableTime objectAtIndex:indexPath.row];
+        destViewController.eventRating = [tableRating objectAtIndex:indexPath.row];
+        destViewController.eventAddress = [tableAddress objectAtIndex:indexPath.row];
+        destViewController.eventLocation = [tableLocation objectAtIndex:indexPath.row];
+        destViewController.eventDesc = [tableDesc objectAtIndex:indexPath.row];
+    }
 }
 @end

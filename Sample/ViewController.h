@@ -16,11 +16,14 @@
     NSMutableArray *tableDate;
     NSMutableArray *tableLocation;
     NSMutableArray *tableRating;
+    NSMutableArray *tableAddress;
+    NSMutableArray *tableDesc;
    // NSArray *thumbnails;
    // NSArray *prepTime;
    
 }
 //-(IBAction)display;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end
 
