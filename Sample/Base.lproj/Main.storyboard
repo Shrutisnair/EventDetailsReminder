@@ -196,7 +196,7 @@
                     <view key="view" contentMode="scaleToFill" id="Jkc-VW-PBJ">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4761_0240-1-1431035516.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZY1-TJ-LLT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4761_0240-1-1431035516.png" translatesAutoresizingMaskIntoConstraints="NO" id="AUw-ar-2UQ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="64" width="400" height="536"/>
@@ -311,31 +311,43 @@
                                     <rect key="frame" x="234" y="515" width="126" height="30"/>
                                 </variation>
                             </button>
-                            <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tL5-wo-GRi">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jHj-eg-g3V">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <variation key="widthClass=compact" ambiguous="YES">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="286"/>
-                                    </variation>
-                                </view>
-                                <blurEffect style="light"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="314" width="400" height="286"/>
-                                </variation>
-                            </visualEffectView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C8E-zO-IEz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="254" y="173" width="146" height="91"/>
                                 </variation>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ6-6m-2Wi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="254" y="173" width="146" height="91"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="fxn-mp-GmD" kind="show" identifier="locationmaps" id="aFV-b8-dWa"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHV-Ut-xlU">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kFS-sD-FVQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <variation key="widthClass=compact" ambiguous="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="295"/>
+                                    </variation>
+                                </view>
+                                <blurEffect style="light"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="305" width="400" height="295"/>
+                                </variation>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="ZY1-TJ-LLT"/>
+                                <exclude reference="AUw-ar-2UQ"/>
                                 <exclude reference="Sbh-zx-VRc"/>
                                 <exclude reference="BVa-Np-bcM"/>
                                 <exclude reference="5O1-KC-bUt"/>
@@ -349,13 +361,14 @@
                                 <exclude reference="fqN-AZ-Q6N"/>
                                 <exclude reference="bOC-iw-aD2"/>
                                 <exclude reference="JaA-FJ-dRl"/>
-                                <exclude reference="tL5-wo-GRi"/>
                                 <exclude reference="C8E-zO-IEz"/>
+                                <exclude reference="tZ6-6m-2Wi"/>
+                                <exclude reference="IHV-Ut-xlU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="ZY1-TJ-LLT"/>
+                                <include reference="AUw-ar-2UQ"/>
                                 <include reference="Sbh-zx-VRc"/>
                                 <include reference="BVa-Np-bcM"/>
                                 <include reference="5O1-KC-bUt"/>
@@ -369,8 +382,9 @@
                                 <include reference="fqN-AZ-Q6N"/>
                                 <include reference="bOC-iw-aD2"/>
                                 <include reference="JaA-FJ-dRl"/>
-                                <include reference="tL5-wo-GRi"/>
                                 <include reference="C8E-zO-IEz"/>
+                                <include reference="tZ6-6m-2Wi"/>
+                                <include reference="IHV-Ut-xlU"/>
                             </mask>
                         </variation>
                     </view>
@@ -387,6 +401,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEB-fC-l5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="532.5" y="256"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="qoS-rn-p8p">
+            <objects>
+                <viewController id="fxn-mp-GmD" customClass="mapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6DR-bX-XGp"/>
+                        <viewControllerLayoutGuide type="bottom" id="7k9-m0-EHZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wES-pI-hog">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C1o-jz-WRc">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                </variation>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="C1o-jz-WRc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="C1o-jz-WRc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="C1o-jz-WRc" id="7iI-XF-9iZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYC-19-ty7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5" y="248"/>
         </scene>
     </scenes>
     <resources>
