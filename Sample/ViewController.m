@@ -32,8 +32,9 @@
     tableData=[[NSMutableArray alloc] init] ;
     tableTime=[[NSMutableArray alloc] init] ;
     tableDate=[[NSMutableArray alloc] init] ;
+    thumbnails=[[NSMutableArray alloc] init];
     tableLocation=[[NSMutableArray alloc]init];
-    tableRating=[[NSMutableArray alloc]init];
+   // tableRating=[[NSMutableArray alloc]init];
     tableAddress=[[NSMutableArray alloc]init];
     tableDesc=[[NSMutableArray alloc]init];
     NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -53,7 +54,7 @@
         NSString *location=[arrayResult objectForKey:@"location"];
         [tableLocation addObject:location];
         NSString *rating=[arrayResult objectForKey:@"rating"];
-        [tableRating addObject:rating];
+        [thumbnails addObject:rating];
         NSString *address=[arrayResult objectForKey:@"address"];
         [tableAddress addObject:address];
         NSString *desc=[arrayResult objectForKey:@"description"];
@@ -96,9 +97,9 @@
     cell.timeLabel.text = [tableTime objectAtIndex:indexPath.row];
     cell.dateLabel.text = [tableDate objectAtIndex:indexPath.row];
     cell.locationLabel.text = [tableLocation objectAtIndex:indexPath.row];
-    cell.ratingLabel.text=[tableRating objectAtIndex:indexPath.row];
-    // cell.thumbnailImageView.image=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rsz_1maxresdefault.png"]];
+   // cell.ratingLabel.text=[tableRating objectAtIndex:indexPath.row];
+    cell.imageView.image=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4700850_orig.png"]];
    // cell.prepTimeLabel.text=[prepTime objectAtIndex:indexPath.row];
     
     return cell;
@@ -115,7 +116,7 @@
         destViewController.eventName = [tableData objectAtIndex:indexPath.row];
         destViewController.eventDate = [tableDate objectAtIndex:indexPath.row];
         destViewController.eventTime = [tableTime objectAtIndex:indexPath.row];
-        destViewController.eventRating = [tableRating objectAtIndex:indexPath.row];
+        destViewController.imageView = [thumbnails objectAtIndex:indexPath.row];
         destViewController.eventAddress = [tableAddress objectAtIndex:indexPath.row];
         destViewController.eventLocation = [tableLocation objectAtIndex:indexPath.row];
         destViewController.eventDesc = [tableDesc objectAtIndex:indexPath.row];

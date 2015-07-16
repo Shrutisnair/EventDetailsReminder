@@ -11,9 +11,10 @@
 @implementation SampleCell
 
     @synthesize nameLabel = _nameLabel;
-    @synthesize ratingLabel = _ratingLabel;
+   // @synthesize ratingLabel = _ratingLabel;
     @synthesize dateLabel=_dateLabel;
     @synthesize timeLabel=_timeLabel;
     @synthesize locationLabel=_locationLabel;
- //   @synthesize ratingLabel=_ratingLabel;
+   // @synthesize ratingLabel=_ratingLabel;
+    @synthesize imageView=_imageView;
    @end

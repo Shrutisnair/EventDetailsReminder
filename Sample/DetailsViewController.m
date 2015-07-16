@@ -29,27 +29,29 @@
 @synthesize eventName;
 @synthesize eventDate;
 @synthesize eventTime;
-@synthesize eventRating;
+//@synthesize eventRating;
 @synthesize eventLocation;
 @synthesize eventAddress;
 @synthesize eventDesc;
+@synthesize imageView;
 
 @synthesize enameLabel=_enameLabel;
 @synthesize edateLabel=_edateLabel;
 @synthesize etimeLabel=_etimeLabel;
 @synthesize eaddressLabel=_eaddressLabel;
 @synthesize edescLabel=_edescLabel;
-@synthesize eratingLabel=_eratingLabel;
+//@synthesize eratingLabel=_eratingLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.enameLabel.text=eventName;
     self.edateLabel.text=eventDate;
+    self.imageView.image = imageView;
     self.etimeLabel.text=eventTime;
     self.eaddressLabel.text=eventAddress;
     self.edescLabel.text=eventDesc;
-    self.eratingLabel.text=eventRating;
+    //self.eratingLabel.text=eventRating;
     self.mapView.delegate = self;
     }
 

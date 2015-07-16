@@ -15,10 +15,10 @@
     NSMutableArray *tableTime;
     NSMutableArray *tableDate;
     NSMutableArray *tableLocation;
-    NSMutableArray *tableRating;
+    //NSMutableArray *tableRating;
     NSMutableArray *tableAddress;
     NSMutableArray *tableDesc;
-   // NSArray *thumbnails;
+    NSMutableArray *thumbnails;
    // NSArray *prepTime;
    
 }

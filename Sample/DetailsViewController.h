@@ -15,7 +15,8 @@
 @property NSString *eventTime;
 @property NSString *eventLocation;
 @property NSString *eventDesc;
-@property NSString *eventRating;
+//@property NSString *eventRating;
+@property UIImageView *imageView;
 @property NSString *eventAddress;
 
 -(IBAction)dismiss;
@@ -25,7 +26,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *etimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *eaddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *edescLabel;
-@property (nonatomic, weak) IBOutlet UILabel *eratingLabel;
+//@property (nonatomic, weak) IBOutlet UILabel *eratingLabel;
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
