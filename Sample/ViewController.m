@@ -116,8 +116,9 @@
         destViewController.eventName = [tableData objectAtIndex:indexPath.row];
         destViewController.eventDate = [tableDate objectAtIndex:indexPath.row];
         destViewController.eventTime = [tableTime objectAtIndex:indexPath.row];
-        destViewController.imageView = [thumbnails objectAtIndex:indexPath.row];
-        destViewController.eventAddress = [tableAddress objectAtIndex:indexPath.row];
+       // destViewController.imageView = [thumbnails objectAtIndex:indexPath.row];
+        destViewController.eventImage=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+        destViewController.eventAddress=[tableAddress objectAtIndex:indexPath.row];
         destViewController.eventLocation = [tableLocation objectAtIndex:indexPath.row];
         destViewController.eventDesc = [tableDesc objectAtIndex:indexPath.row];
     }

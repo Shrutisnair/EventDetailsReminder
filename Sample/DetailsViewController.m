@@ -33,7 +33,7 @@
 @synthesize eventLocation;
 @synthesize eventAddress;
 @synthesize eventDesc;
-@synthesize imageView;
+@synthesize eventImage;
 
 @synthesize enameLabel=_enameLabel;
 @synthesize edateLabel=_edateLabel;
@@ -47,12 +47,13 @@
     // Do any additional setup after loading the view.
     self.enameLabel.text=eventName;
     self.edateLabel.text=eventDate;
-    self.imageView.image = imageView;
+    self.ratingImage.image = eventImage;
     self.etimeLabel.text=eventTime;
     self.eaddressLabel.text=eventAddress;
     self.edescLabel.text=eventDesc;
     //self.eratingLabel.text=eventRating;
     self.mapView.delegate = self;
+    
     }
 
 - (void)didReceiveMemoryWarning {

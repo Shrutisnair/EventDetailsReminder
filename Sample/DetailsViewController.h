@@ -16,7 +16,7 @@
 @property NSString *eventLocation;
 @property NSString *eventDesc;
 //@property NSString *eventRating;
-@property UIImageView *imageView;
+@property UIImage *eventImage;
 @property NSString *eventAddress;
 
 -(IBAction)dismiss;
@@ -30,6 +30,7 @@
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
+@property (nonatomic, strong) IBOutlet UIImageView *ratingImage ;
 @property (nonatomic, strong) NSArray *mapItemList;
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 @property (nonatomic) CLLocationCoordinate2D userLocation;
