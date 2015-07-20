@@ -68,7 +68,7 @@
                                                         <rect key="frame" x="46" y="71" width="99" height="15"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock-Small.png" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-Ah-MnA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-Ah-MnA">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="243" y="68" width="28" height="19"/>
@@ -92,7 +92,7 @@
                                                         <rect key="frame" x="81" y="96" width="153" height="17"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tear-off-calendar-icon-1105162312.png" translatesAutoresizingMaskIntoConstraints="NO" id="7TV-Kh-YQh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar2" translatesAutoresizingMaskIntoConstraints="NO" id="7TV-Kh-YQh">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="20" y="70" width="25" height="16"/>
@@ -206,7 +206,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ysh_5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-94-srR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-94-srR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6a-B7-ztA">
@@ -349,7 +349,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="dOj-uc-Hth">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar1" translatesAutoresizingMaskIntoConstraints="NO" id="dOj-uc-Hth">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="3kL-a7-i9P"/>
@@ -421,6 +421,9 @@
                                                     <include reference="Wbr-Ao-bKS"/>
                                                 </mask>
                                             </variation>
+                                            <connections>
+                                                <segue destination="zTl-0O-LO4" kind="show" identifier="calculate" id="pSS-N9-Mav"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaA-FJ-dRl">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -462,7 +465,7 @@
                                                 </mask>
                                             </variation>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock-Small.png" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-tm-K2z">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-tm-K2z">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="14" id="NJE-ea-aRZ"/>
@@ -791,11 +794,132 @@
             </objects>
             <point key="canvasLocation" x="1440" y="248"/>
         </scene>
+        <!--Calculate-->
+        <scene sceneID="ABt-V1-H1d">
+            <objects>
+                <viewController id="zTl-0O-LO4" customClass="Calculate" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fnt-ek-sju"/>
+                        <viewControllerLayoutGuide type="bottom" id="dEU-ev-TXT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3TD-Bc-DQN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0BZ-Bm-NL8">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="34" y="99" width="129" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9E-7E-U5M">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="233" y="99" width="117" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKj-eo-AAg">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="142" y="251" width="116" height="30"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-VT-yhO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="+"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="180" y="99" width="39" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="addNums:" destination="zTl-0O-LO4" eventType="touchUpInside" id="Bqj-oy-6M6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-kn-1kI">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="-"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="181" y="120" width="39" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="diffNums:" destination="zTl-0O-LO4" eventType="touchUpInside" id="0di-pN-mZx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-8v-1BY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="*"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="181" y="145" width="39" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="prodNums:" destination="zTl-0O-LO4" eventType="touchUpInside" id="u1y-cq-WbB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpL-Cq-eyp">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="251" width="42" height="30"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGR-LH-TBa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="/"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="181" y="163" width="39" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="divNums:" destination="zTl-0O-LO4" eventType="touchUpInside" id="CTh-gr-nQv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0BZ-Bm-NL8"/>
+                                <exclude reference="i9E-7E-U5M"/>
+                                <exclude reference="tKj-eo-AAg"/>
+                                <exclude reference="mNg-VT-yhO"/>
+                                <exclude reference="aRI-kn-1kI"/>
+                                <exclude reference="Ke1-8v-1BY"/>
+                                <exclude reference="OpL-Cq-eyp"/>
+                                <exclude reference="ZGR-LH-TBa"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="0BZ-Bm-NL8"/>
+                                <include reference="i9E-7E-U5M"/>
+                                <include reference="tKj-eo-AAg"/>
+                                <include reference="mNg-VT-yhO"/>
+                                <include reference="aRI-kn-1kI"/>
+                                <include reference="Ke1-8v-1BY"/>
+                                <include reference="OpL-Cq-eyp"/>
+                                <include reference="ZGR-LH-TBa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Calculate" id="sy5-LA-i8N"/>
+                    <connections>
+                        <outlet property="result" destination="tKj-eo-AAg" id="63E-X3-KJO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llU-9U-IOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729" y="957"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Clock-Small.png" width="40" height="40"/>
-        <image name="calendar.png" width="128" height="128"/>
-        <image name="tear-off-calendar-icon-1105162312.png" width="32" height="32"/>
-        <image name="ysh_5.jpg" width="392" height="293"/>
+        <image name="Image" width="130" height="97"/>
+        <image name="calendar1" width="128" height="128"/>
+        <image name="calendar2" width="32" height="32"/>
+        <image name="clock" width="40" height="40"/>
     </resources>
 </document>
