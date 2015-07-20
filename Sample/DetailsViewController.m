@@ -11,17 +11,12 @@
 #import"mapViewController.h"
 
 
-@interface DetailsViewController () 
-//@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
+@interface DetailsViewController ()
+
 @end
 
 
-
-
-
-
 @implementation DetailsViewController
-
 
 
 @synthesize mapView;
@@ -29,7 +24,6 @@
 @synthesize eventName;
 @synthesize eventDate;
 @synthesize eventTime;
-//@synthesize eventRating;
 @synthesize eventLocation;
 @synthesize eventAddress;
 @synthesize eventDesc;
@@ -61,6 +55,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma - IBAction Methods
+
 - (IBAction)dismiss {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -87,7 +83,7 @@
         
         MKMapItem *mapItem = [self.mapItemList objectAtIndex:0];
          NSLog(@"%@",mapItem.name);
-       // self.title = mapItem.name;
+      
         [self.mapView setRegion:self.boundingRegion];
     
         mapItem = [self.places objectAtIndex:0];
@@ -113,10 +109,10 @@
 self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
 
 [self.localSearch startWithCompletionHandler:completionHandler];
-//[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
-//[self.mapView setRegion:self.boundingRegion];
 }
+
+#pragma - Navigation
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"locationmaps"]) {

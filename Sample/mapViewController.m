@@ -18,6 +18,7 @@
 @synthesize boundRegion;
 @synthesize mapItem;
 @synthesize mapView=_mapView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -32,8 +33,7 @@
 {
     [self.mapView setRegion:self.boundRegion];
     
-   // mapItem = [self.places objectAtIndex:0];
-    
+   
     // add the single annotation to our map
     PlaceAnnotation *annotation = [[PlaceAnnotation alloc] init];
     annotation.coordinate = mapItem.placemark.location.coordinate;

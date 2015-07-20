@@ -21,20 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-  //  tableData = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-   // thumbnails = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"mushroom_risotto.jpg", @"full_breakfast.jpg", @"hamburger.jpg", @"ham_and_egg_sandwich.jpg", @"creme_brelee.jpg", @"white_chocolate_donut.jpg", @"starbucks_coffee.jpg", @"vegetable_curry.jpg", @"instant_noodle_with_egg.jpg", @"noodle_with_bbq_pork.jpg", @"japanese_noodle_with_pork.jpg", @"green_tea.jpg", @"thai_shrimp_cake.jpg", @"angry_birds_cake.jpg", @"ham_and_cheese_panini.jpg", nil];
-   // prepTime= [NSArray arrayWithObjects:@"20", @"10", @"25", @"30", @"15", @"20", @"15", @"20", @"30", @"14", @"18", @"40", @"20", @"35", @"30", @"25", nil];
+
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"events" ofType:@"json"];
-   // NSError *error = nil;
-   // NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&error];
+   
     NSString* jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     tableData=[[NSMutableArray alloc] init] ;
     tableTime=[[NSMutableArray alloc] init] ;
     tableDate=[[NSMutableArray alloc] init] ;
     thumbnails=[[NSMutableArray alloc] init];
     tableLocation=[[NSMutableArray alloc]init];
-   // tableRating=[[NSMutableArray alloc]init];
     tableAddress=[[NSMutableArray alloc]init];
     tableDesc=[[NSMutableArray alloc]init];
     NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -66,11 +61,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 
-/*- (IBAction)display
-{
-    label.text=@"clicked";
-}*/
 }
+
+#pragma - UITableView delegate methods
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [tableData count];
@@ -80,16 +74,9 @@
     static NSString *simpleTableIdentifier = @"SampleCell";
     
     SampleCell *cell = (SampleCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-  /*  if (cell == nil)
+ 
+    if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SampleCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
-    cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
-    cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-    cell.prepTimeLabel.text = [prepTime objectAtIndex:indexPath.row];*/
-    if (cell == nil) {
         cell = [[SampleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
@@ -97,10 +84,9 @@
     cell.timeLabel.text = [tableTime objectAtIndex:indexPath.row];
     cell.dateLabel.text = [tableDate objectAtIndex:indexPath.row];
     cell.locationLabel.text = [tableLocation objectAtIndex:indexPath.row];
-   // cell.ratingLabel.text=[tableRating objectAtIndex:indexPath.row];
     cell.imageView.image=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4700850_orig.png"]];
-   // cell.prepTimeLabel.text=[prepTime objectAtIndex:indexPath.row];
+ 
     
     return cell;
 }
@@ -109,6 +95,9 @@
     return 125;
 
 }
+
+#pragma - Navigation
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -116,7 +105,6 @@
         destViewController.eventName = [tableData objectAtIndex:indexPath.row];
         destViewController.eventDate = [tableDate objectAtIndex:indexPath.row];
         destViewController.eventTime = [tableTime objectAtIndex:indexPath.row];
-       // destViewController.imageView = [thumbnails objectAtIndex:indexPath.row];
         destViewController.eventImage=[UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
         destViewController.eventAddress=[tableAddress objectAtIndex:indexPath.row];
         destViewController.eventLocation = [tableLocation objectAtIndex:indexPath.row];
