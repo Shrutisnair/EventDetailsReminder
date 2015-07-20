@@ -42,14 +42,14 @@
     
         details = [[Events alloc]init];
   
-        details->name=[arrayResult objectForKey:@"eventName"];
-        details->time=[arrayResult objectForKey:@"time"];
-        details->date=[arrayResult objectForKey:@"date"];
-        details->location=[arrayResult objectForKey:@"location"];
-        details->address=[arrayResult objectForKey:@"address"];
-        details->desc=[arrayResult objectForKey:@"description"];
-        details->id=[arrayResult objectForKey:@"eventId"];
-        details->rating=[arrayResult objectForKey:@"rating"];
+        details.name=[arrayResult objectForKey:@"eventName"];
+        details.time=[arrayResult objectForKey:@"time"];
+        details.date=[arrayResult objectForKey:@"date"];
+        details.location=[arrayResult objectForKey:@"location"];
+        details.address=[arrayResult objectForKey:@"address"];
+        details.desc=[arrayResult objectForKey:@"description"];
+        details.id=[arrayResult objectForKey:@"eventId"];
+        details.rating=[arrayResult objectForKey:@"rating"];
         
         [event addObject:details];
         
@@ -82,12 +82,12 @@
     
     Events *temp=[[Events alloc]init];
     temp= [event objectAtIndex:indexPath.row];
-    cell.nameLabel.text = temp ->name;
-    cell.timeLabel.text = temp->time;
-    cell.dateLabel.text = temp->date;
-    cell.locationLabel.text = temp->location;
-    cell.imageView.image=[UIImage imageNamed:temp->rating];
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4700850_orig.png"]];
+    cell.nameLabel.text = temp.name;
+    cell.timeLabel.text = temp.time;
+    cell.dateLabel.text = temp.date;
+    cell.locationLabel.text = temp.location;
+    cell.imageView.image=[UIImage imageNamed:temp.rating];
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellImage"]];
  
     
     return cell;

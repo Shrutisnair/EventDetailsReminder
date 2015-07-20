@@ -10,4 +10,14 @@
 
 @implementation Events
 
+@synthesize name;
+@synthesize id;
+@synthesize location;
+@synthesize address;
+@synthesize date;
+@synthesize time;
+@synthesize desc;
+@synthesize rating;
+
+
 @end

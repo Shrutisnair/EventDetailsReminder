@@ -31,12 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.enameLabel.text=item->name;
-    self.edateLabel.text=item->date;
-    self.ratingImage.image =[UIImage imageNamed:item->rating] ;
-    self.etimeLabel.text=item->time;
-    self.eaddressLabel.text=item->address;
-    self.edescLabel.text=item->desc;
+    self.enameLabel.text=item.name;
+    self.edateLabel.text=item.date;
+    self.ratingImage.image =[UIImage imageNamed:item.rating] ;
+    self.etimeLabel.text=item.time;
+    self.eaddressLabel.text=item.address;
+    self.edescLabel.text=item.desc;
     self.mapView.delegate = self;
     
     }
@@ -52,6 +52,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)subscribe{
+    
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     
@@ -65,7 +69,7 @@
     
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     
-    request.naturalLanguageQuery = item->location;
+    request.naturalLanguageQuery = item.location;
     request.region = newRegion;
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
     {

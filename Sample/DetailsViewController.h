@@ -18,6 +18,7 @@
 @property Events *item;
 
 -(IBAction)dismiss;
+-(IBAction)subscribe;
 
 @property (nonatomic, weak) IBOutlet UILabel *enameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *edateLabel;

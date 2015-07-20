@@ -8,7 +8,7 @@
     "date": "1st Dec 2015",
     "time": "6:30pm",
     "location":"Pune",
-    "rating":"3s.png"
+    "rating":"rating3"
 },
     {
         
@@ -19,7 +19,7 @@
         "date":"7th Aug 2015",
         "time": "8:00pm",
         "location":" Mumbai",
-        "rating":"4s.png"
+        "rating":"rating4"
     },
     {
         
@@ -30,7 +30,7 @@
         "date": "5th July 2015",
         "time": "6:00pm",
         "location":"Jaipur",
-        "rating":"3s.png"
+        "rating":"rating3"
     },
     {
         "eventID": "4",
@@ -40,7 +40,7 @@
         "date": "10th June 2015",
         "time": "5:30pm",
         "location": "Mumbai",
-        "rating":"5s.png"
+        "rating":"rating5"
     },
     {
         "eventID": "5",
@@ -51,7 +51,7 @@
         "date": "25th January 2015",
         "time": "7:30pm",
         "location": "Kolkata",
-        "rating":"2s.png"
+        "rating":"rating2"
     }
 ]
 
