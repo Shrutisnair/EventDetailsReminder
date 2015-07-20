@@ -13,6 +13,6 @@
 
 @property MKCoordinateRegion boundRegion;
 @property MKMapItem *mapItem;
-@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end

@@ -7,23 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Events.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
    
-    NSMutableArray *tableData;
-    NSMutableArray *tableTime;
-    NSMutableArray *tableDate;
-    NSMutableArray *tableLocation;
-    //NSMutableArray *tableRating;
-    NSMutableArray *tableAddress;
-    NSMutableArray *tableDesc;
-    NSMutableArray *thumbnails;
-   // NSArray *prepTime;
-   
+    NSMutableArray *event;
+    Events *details;
 }
-//-(IBAction)display;
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 

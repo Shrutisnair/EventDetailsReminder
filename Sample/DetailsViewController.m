@@ -18,34 +18,25 @@
 
 @implementation DetailsViewController
 
-
+@synthesize item;
 @synthesize mapView;
-
-@synthesize eventName;
-@synthesize eventDate;
-@synthesize eventTime;
-@synthesize eventLocation;
-@synthesize eventAddress;
-@synthesize eventDesc;
-@synthesize eventImage;
 
 @synthesize enameLabel=_enameLabel;
 @synthesize edateLabel=_edateLabel;
 @synthesize etimeLabel=_etimeLabel;
 @synthesize eaddressLabel=_eaddressLabel;
 @synthesize edescLabel=_edescLabel;
-//@synthesize eratingLabel=_eratingLabel;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.enameLabel.text=eventName;
-    self.edateLabel.text=eventDate;
-    self.ratingImage.image = eventImage;
-    self.etimeLabel.text=eventTime;
-    self.eaddressLabel.text=eventAddress;
-    self.edescLabel.text=eventDesc;
-    //self.eratingLabel.text=eventRating;
+    self.enameLabel.text=item->name;
+    self.edateLabel.text=item->date;
+    self.ratingImage.image =[UIImage imageNamed:item->rating] ;
+    self.etimeLabel.text=item->time;
+    self.eaddressLabel.text=item->address;
+    self.edescLabel.text=item->desc;
     self.mapView.delegate = self;
     
     }
@@ -74,7 +65,7 @@
     
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     
-    request.naturalLanguageQuery = eventLocation;
+    request.naturalLanguageQuery = item->location;
     request.region = newRegion;
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
     {

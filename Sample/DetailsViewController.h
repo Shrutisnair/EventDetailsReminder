@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Events.h"
 
 @interface DetailsViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
-@property NSString *eventName;
-@property NSString *eventDate;
-@property NSString *eventTime;
-@property NSString *eventLocation;
-@property NSString *eventDesc;
-//@property NSString *eventRating;
-@property UIImage *eventImage;
-@property NSString *eventAddress;
+
+
+//@property UIImage *eventImage;
+
+@property Events *item;
 
 -(IBAction)dismiss;
 
@@ -26,11 +24,12 @@
 @property (nonatomic, weak) IBOutlet UILabel *etimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *eaddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *edescLabel;
-//@property (nonatomic, weak) IBOutlet UILabel *eratingLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *ratingImage;
 
-@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
-@property (nonatomic, strong) IBOutlet UIImageView *ratingImage ;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+
+
 @property (nonatomic, strong) NSArray *mapItemList;
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 @property (nonatomic) CLLocationCoordinate2D userLocation;
