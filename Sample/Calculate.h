@@ -10,11 +10,7 @@
 
 @interface Calculate : UIViewController
 
- @property (strong, nonatomic) IBOutlet UILabel *result;
+@property (weak, nonatomic) IBOutlet UILabel *consoleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *opperator;
 
-
-- (IBAction)addNums:(id)sender;
-- (IBAction)diffNums:(id)sender;
-- (IBAction)prodNums:(id)sender;
-- (IBAction)divNums:(id)sender;
 @end
