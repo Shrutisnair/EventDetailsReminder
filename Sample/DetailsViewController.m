@@ -54,7 +54,33 @@
 
 - (IBAction)subscribe{
     
-}
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5 ];
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    localNotification.alertBody = @"Notification sent";
+    localNotification.applicationIconBadgeNumber = 1;
+   // localNotification.alertAction =@"Sample";
+    
+   /* if(soundfileName == nil)
+    {
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+    }
+    else
+    {
+        localNotification.soundName = soundfileName;
+    }
+*/
+  //  localNotification.alertLaunchImage = launchImage;
+    
+  //  self.badgeCount ++;
+   // localNotification.applicationIconBadgeNumber = self.badgeCount;
+   // localNotification.userInfo = userInfo;
+    
+    // Schedule it with the app
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+   // [localNotification release];
+   }
 
 -(void)viewDidAppear:(BOOL)animated
 {
