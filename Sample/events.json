@@ -5,7 +5,7 @@
     "description":"Samai Gandharva Sangeet Mahotsav is one of the largest and most sought-after Indian Classical music festivals in India",
     
     "address": "Ramanbag School, Shanivar Peth, Pune, Maharashtra",
-    "date": "1st Dec 2015",
+    "date": "1 Dec 2015",
     "time": "6:30pm",
     "location":"Pune",
     "rating":"rating3"
@@ -16,7 +16,7 @@
         "eventName": "Ninad Concert",
         "description":"A classical dance show",
         "address":"Pratibha Auditorium, Mumbai, Maharashtra",
-        "date":"7th Aug 2015",
+        "date":"7 Aug 2015",
         "time": "8:00pm",
         "location":" Mumbai",
         "rating":"rating4"
@@ -27,7 +27,7 @@
         "eventName": "Sufi Evening",
         "description":"It plays host to the renowned qawwali group,Nizami Brothers",
         "address":"B M Birla Auditorium, Jaipur,Rajasthan",
-        "date": "5th July 2015",
+        "date": "5 July 2015",
         "time": "6:00pm",
         "location":"Jaipur",
         "rating":"rating3"
@@ -37,7 +37,7 @@
         "eventName": "Megharanjini",
         "description":"Monsoon Melodies by Sawani Shende",
         "address":"Little Theatre, Naiman Road, Mumbai, Maharashtra",
-        "date": "10th June 2015",
+        "date": "10 June 2015",
         "time": "5:30pm",
         "location": "Mumbai",
         "rating":"rating5"
@@ -48,7 +48,7 @@
         "description":"Humble get together of music lovers",
         
         "address":"Nazrul Mancha, Rabindra Sarobar,Kolkata,West Bengal",
-        "date": "25th January 2015",
+        "date": "25 Jan 2015",
         "time": "7:30pm",
         "location": "Kolkata",
         "rating":"rating2"
