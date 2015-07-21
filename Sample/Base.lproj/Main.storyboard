@@ -353,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199.5" y="270"/>
+            <point key="canvasLocation" x="-16.5" y="226"/>
         </scene>
         <!--DETAILS-->
         <scene sceneID="yb0-Qw-8Sj">
@@ -583,6 +583,7 @@
                                                 </mask>
                                             </variation>
                                             <connections>
+                                                <action selector="subscribe" destination="RS5-2r-z23" eventType="touchUpInside" id="VI1-Jo-2bW"/>
                                                 <segue destination="zTl-0O-LO4" kind="show" identifier="calculate" id="pSS-N9-Mav"/>
                                             </connections>
                                         </button>
