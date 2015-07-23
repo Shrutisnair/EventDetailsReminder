@@ -54,13 +54,13 @@
 
 - (IBAction)subscribe{
     
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    /*UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10 ];
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.category = @"myCategory";
     localNotification.alertBody = @"Alert alarm";
     localNotification.applicationIconBadgeNumber = 1;
-    localNotification.userInfo = @{ @"key1" : item.name, @"key2" : item.date, @"key3" : item.time };
+    localNotification.userInfo = @{ @"key1" : item.name, @"key2" : item.date, @"key3" : item.time };*/
    // localNotification.alertAction =@"Sample";
     
     
@@ -80,7 +80,7 @@
    // localNotification.userInfo = userInfo;
     
     // Schedule it with the app
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+   //[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
    // [localNotification release];
    }
 
