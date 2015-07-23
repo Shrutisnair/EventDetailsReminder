@@ -15,8 +15,8 @@
 		817B4AA21B53945A0072778B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817B4AA01B53945A0072778B /* LaunchScreen.storyboard */; };
 		817B4AAD1B53945A0072778B /* SampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817B4AAC1B53945A0072778B /* SampleTests.m */; };
 		817B4AB81B53945A0072778B /* SampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817B4AB71B53945A0072778B /* SampleUITests.m */; };
-		817B4AE61B53CDA10072778B /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817B4AE51B53CDA10072778B /* Example.storyboard */; };
 		817B4AEB1B53D24E0072778B /* SampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 817B4AEA1B53D24E0072778B /* SampleCell.m */; };
+		819F12171B6098630084F39E /* reminderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F12161B6098630084F39E /* reminderController.m */; };
 		81DCCE4B1B5E470500E152DF /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DCCE4A1B5E470500E152DF /* InterfaceController.m */; };
 		81DCCE4E1B5E470500E152DF /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DCCE4D1B5E470500E152DF /* NotificationController.m */; };
 		81DCCE501B5E470500E152DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81DCCE4F1B5E470500E152DF /* Assets.xcassets */; };
@@ -109,9 +109,10 @@
 		817B4AB31B53945A0072778B /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		817B4AB71B53945A0072778B /* SampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleUITests.m; sourceTree = "<group>"; };
 		817B4AB91B53945A0072778B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		817B4AE51B53CDA10072778B /* Example.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		817B4AE91B53D24E0072778B /* SampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCell.h; sourceTree = "<group>"; };
 		817B4AEA1B53D24E0072778B /* SampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCell.m; sourceTree = "<group>"; };
+		819F12151B6098630084F39E /* reminderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reminderController.h; sourceTree = "<group>"; };
+		819F12161B6098630084F39E /* reminderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reminderController.m; sourceTree = "<group>"; };
 		81DCCE451B5E470500E152DF /* Sample WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sample WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DCCE481B5E470500E152DF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		81DCCE491B5E470500E152DF /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -243,7 +244,6 @@
 				817B4AA01B53945A0072778B /* LaunchScreen.storyboard */,
 				817B4AA31B53945A0072778B /* Info.plist */,
 				817B4A921B53945A0072778B /* Supporting Files */,
-				817B4AE51B53CDA10072778B /* Example.storyboard */,
 				81E436221B54FFE000F95F7E /* events.json */,
 				81E436291B5533A600F95F7E /* DetailsViewController.h */,
 				81E4362A1B5533A600F95F7E /* DetailsViewController.m */,
@@ -251,6 +251,8 @@
 				81E034FB1B5678A1006B61A3 /* mapViewController.m */,
 				81DF6CCF1B5CB0A4005C33D9 /* Events.h */,
 				81DF6CD01B5CB0A4005C33D9 /* Events.m */,
+				819F12151B6098630084F39E /* reminderController.h */,
+				819F12161B6098630084F39E /* reminderController.m */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -476,7 +478,6 @@
 				817B4A9F1B53945A0072778B /* Assets.xcassets in Resources */,
 				817B4A9D1B53945A0072778B /* Main.storyboard in Resources */,
 				81E436211B54FE1200F95F7E /* events.json.rtf in Resources */,
-				817B4AE61B53CDA10072778B /* Example.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +529,7 @@
 				817B4A971B53945A0072778B /* AppDelegate.m in Sources */,
 				81DF6CEC1B5CE3A5005C33D9 /* Calculate.m in Sources */,
 				817B4A941B53945A0072778B /* main.m in Sources */,
+				819F12171B6098630084F39E /* reminderController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,6 +861,7 @@
 				81DCCE641B5E470600E152DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81DCCE651B5E470600E152DF /* Build configuration list for PBXNativeTarget "Sample WatchKit 1 Extension" */ = {
 			isa = XCConfigurationList;
@@ -867,6 +870,7 @@
 				81DCCE671B5E470600E152DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
