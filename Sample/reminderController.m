@@ -25,7 +25,7 @@
   }
 -(void)viewDidAppear:(BOOL)animated {
  
-     NSDate *now = [NSDate date];
+    NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *comp = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:now];
     NSInteger hour = [comp hour];
@@ -35,13 +35,12 @@
     stepperhourLabel.value=hour;
     [timerLabel setText:[NSString stringWithFormat:@"%ld", minute]];
     
-    // Do any additional setup after loading the view.
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+  }
 
 #pragma mark - IBAction methods
 
@@ -61,21 +60,6 @@
     [hourLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
 }
 
-/*-(IBAction)indexChanged:(UISegmentedControl *)sender {
-    
-    switch (sender.selectedSegmentIndex)
-    {
-        case 0:
-            d=0;
-            break;
-        case 1:
-            d=12;
-            break;
-        default: 
-            break; 
-    }
-
-}*/
 
 - (IBAction)OK {
 UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Reminder set"
@@ -87,33 +71,24 @@ UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Reminder set"
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSCalendarUnitYear |NSCalendarUnitMonth|NSCalendarUnitDay)fromDate:now];
-  //  NSInteger hour = [components hour];
-   // NSInteger minute = [components minute];
+    
     [components setHour:stepperhourLabel.value];
-    NSLog(@"hour:%f",stepperhourLabel.value);
     [components setMinute:stepperLabel.value];
-     [components setSecond:0];
+    [components setSecond:0];
+    
     NSDate *alarmdate = [calendar dateFromComponents:components];
-    NSLog(@"Date:%@" ,alarmdate);
+   
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = alarmdate;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.category = @"myCategory";
     localNotification.alertBody = textLabel.text;
-    localNotification.alertTitle = @"Reminder Set";
+    localNotification.alertTitle = @"Reminder";
     localNotification.userInfo = @{ @"title" : @"Reminder", @"body" : textLabel.text };
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

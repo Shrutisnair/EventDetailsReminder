@@ -23,17 +23,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     stack = @"";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
-#pragma IBAction Methods
+#pragma mark- IBAction Methods
 
 - (IBAction)one:(id)sender {
     [self addnumber:1];

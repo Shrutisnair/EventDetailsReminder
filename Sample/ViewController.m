@@ -58,11 +58,11 @@
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 
 }
 
-#pragma - UITableView delegate methods
+#pragma mark- UITableView delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -86,7 +86,53 @@
     cell.timeLabel.text = temp.time;
     cell.dateLabel.text = temp.date;
     cell.locationLabel.text = temp.location;
-    cell.imageView.image=[UIImage imageNamed:temp.rating];
+    
+    switch ([temp.rating intValue]) {
+        case 1:
+            cell.star1.image=[UIImage imageNamed:@"brightstar"];
+            cell.star2.image=[UIImage imageNamed:@"darkstar"];
+            cell.star3.image=[UIImage imageNamed:@"darkstar"];
+            cell.star4.image=[UIImage imageNamed:@"darkstar"];
+            cell.star5.image=[UIImage imageNamed:@"darkstar"];
+                              break;
+        
+        case 2:
+            cell.star1.image=[UIImage imageNamed:@"brightstar"];
+            cell.star2.image=[UIImage imageNamed:@"brightstar"];
+            cell.star3.image=[UIImage imageNamed:@"darkstar"];
+            cell.star4.image=[UIImage imageNamed:@"darkstar"];
+            cell.star5.image=[UIImage imageNamed:@"darkstar"];
+                            break;
+        
+        case 3:
+            cell.star1.image=[UIImage imageNamed:@"brightstar"];
+            cell.star2.image=[UIImage imageNamed:@"brightstar"];
+            cell.star3.image=[UIImage imageNamed:@"brightstar"];
+            cell.star4.image=[UIImage imageNamed:@"darkstar"];
+            cell.star5.image=[UIImage imageNamed:@"darkstar"];
+                        break;
+            
+        case 4:
+            cell.star1.image=[UIImage imageNamed:@"brightstar"];
+            cell.star2.image=[UIImage imageNamed:@"brightstar"];
+            cell.star3.image=[UIImage imageNamed:@"brightstar"];
+            cell.star4.image=[UIImage imageNamed:@"brightstar"];
+            cell.star5.image=[UIImage imageNamed:@"darkstar"];
+                        break;
+            
+        case 5:
+            cell.star1.image=[UIImage imageNamed:@"brightstar"];
+            cell.star2.image=[UIImage imageNamed:@"brightstar"];
+            cell.star3.image=[UIImage imageNamed:@"brightstar"];
+            cell.star4.image=[UIImage imageNamed:@"brightstar"];
+            cell.star5.image=[UIImage imageNamed:@"brightstar"];
+                        break;
+            
+            
+        default:
+            break;
+    }
+   
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellImage"]];
  
     
@@ -98,7 +144,7 @@
 
 }
 
-#pragma - Navigation
+#pragma mark - Navigation
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {

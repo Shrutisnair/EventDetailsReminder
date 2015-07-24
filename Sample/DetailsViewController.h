@@ -25,8 +25,11 @@
 @property (nonatomic, weak) IBOutlet UILabel *etimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *eaddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *edescLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *ratingImage;
-
+@property (nonatomic, weak) IBOutlet UIImageView *star1;
+@property (nonatomic, weak) IBOutlet UIImageView *star2;
+@property (nonatomic, weak) IBOutlet UIImageView *star3;
+@property (nonatomic, weak) IBOutlet UIImageView *star4;
+@property (nonatomic, weak) IBOutlet UIImageView *star5;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 

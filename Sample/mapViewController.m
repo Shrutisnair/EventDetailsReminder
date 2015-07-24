@@ -21,13 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+   }
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -41,21 +39,11 @@
     annotation.url = mapItem.url;
     [self.mapView addAnnotation:annotation];
     
-    // we have only one annotation, select it's callout
     [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
     
     // center the region around this map item's coordinate
     self.mapView.centerCoordinate = mapItem.placemark.coordinate;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

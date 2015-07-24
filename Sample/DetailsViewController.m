@@ -27,13 +27,66 @@
 @synthesize eaddressLabel=_eaddressLabel;
 @synthesize edescLabel=_edescLabel;
 
+@synthesize star1=_star1;
+@synthesize star2=_star2;
+@synthesize star3=_star3;
+@synthesize star4=_star4;
+@synthesize star5=_star5;
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.enameLabel.text=item.name;
     self.edateLabel.text=item.date;
-    self.ratingImage.image =[UIImage imageNamed:item.rating] ;
+    
+    switch ([item.rating intValue]) {
+        case 1:
+            self.star1.image=[UIImage imageNamed:@"brightstar"];
+            self.star2.image=[UIImage imageNamed:@"darkstar"];
+            self.star3.image=[UIImage imageNamed:@"darkstar"];
+            self.star4.image=[UIImage imageNamed:@"darkstar"];
+            self.star5.image=[UIImage imageNamed:@"darkstar"];
+            break;
+            
+        case 2:
+            self.star1.image=[UIImage imageNamed:@"brightstar"];
+            self.star2.image=[UIImage imageNamed:@"brightstar"];
+            self.star3.image=[UIImage imageNamed:@"darkstar"];
+            self.star4.image=[UIImage imageNamed:@"darkstar"];
+            self.star5.image=[UIImage imageNamed:@"darkstar"];
+            break;
+            
+        case 3:
+            self.star1.image=[UIImage imageNamed:@"brightstar"];
+            self.star2.image=[UIImage imageNamed:@"brightstar"];
+            self.star3.image=[UIImage imageNamed:@"brightstar"];
+            self.star4.image=[UIImage imageNamed:@"darkstar"];
+            self.star5.image=[UIImage imageNamed:@"darkstar"];
+            break;
+            
+        case 4:
+            self.star1.image=[UIImage imageNamed:@"brightstar"];
+            self.star2.image=[UIImage imageNamed:@"brightstar"];
+            self.star3.image=[UIImage imageNamed:@"brightstar"];
+            self.star4.image=[UIImage imageNamed:@"brightstar"];
+            self.star5.image=[UIImage imageNamed:@"darkstar"];
+            break;
+            
+        case 5:
+            self.star1.image=[UIImage imageNamed:@"brightstar"];
+            self.star2.image=[UIImage imageNamed:@"brightstar"];
+            self.star3.image=[UIImage imageNamed:@"brightstar"];
+            self.star4.image=[UIImage imageNamed:@"brightstar"];
+            self.star5.image=[UIImage imageNamed:@"brightstar"];
+            break;
+            
+            
+        default:
+            break;
+    }
+    
     self.etimeLabel.text=item.time;
     self.eaddressLabel.text=item.address;
     self.edescLabel.text=item.desc;
@@ -43,10 +96,10 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
 
-#pragma - IBAction Methods
+#pragma mark- IBAction Methods
 
 - (IBAction)dismiss {
     [self.navigationController popViewControllerAnimated:YES];
@@ -54,34 +107,33 @@
 
 - (IBAction)subscribe{
     
-    /*UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10 ];
+    
+    NSString* dateString = [NSString stringWithFormat:@"%@T%@:00", self.item.date,self.item.time];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy'T'HH:mm:ss"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    NSDate *newDate = [dateFromString dateByAddingTimeInterval:-3600];
+    
+    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Reminder set"
+                                                  message:self.item.name
+                                                 delegate:self
+                                        cancelButtonTitle:@"OK"
+                                        otherButtonTitles:nil];
+    [alert show];
+    
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = newDate;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    localNotification.category = @"myCategory";
-    localNotification.alertBody = @"Alert alarm";
-    localNotification.applicationIconBadgeNumber = 1;
-    localNotification.userInfo = @{ @"key1" : item.name, @"key2" : item.date, @"key3" : item.time };*/
-   // localNotification.alertAction =@"Sample";
-    
-    
-   /* if(soundfileName == nil)
-    {
-        localNotification.soundName = UILocalNotificationDefaultSoundName;
-    }
-    else
-    {
-        localNotification.soundName = soundfileName;
-    }
-*/
-  //  localNotification.alertLaunchImage = launchImage;
-    
-  //  self.badgeCount ++;
-   // localNotification.applicationIconBadgeNumber = self.badgeCount;
-   // localNotification.userInfo = userInfo;
-    
-    // Schedule it with the app
-   //[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-   // [localNotification release];
+    localNotification.category = @"myCategoryyh";
+    localNotification.alertTitle = self.item.name;
+    localNotification.alertBody = @"The event starts in 1 hour";
+    localNotification.userInfo = @{ @"title" : self.item.name, @"body" : @"Event starts in one hour"};
+  
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+  
    }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -118,7 +170,6 @@
         annotation.url = mapItem.url;
         [self.mapView addAnnotation:annotation];
         
-        // we have only one annotation, select it's callout
         [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
         
         // center the region around this map item's coordinate
@@ -139,7 +190,6 @@ self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"locationmaps"]) {
-     //   NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         mapViewController *destViewController = segue.destinationViewController;
         destViewController.boundRegion=self.boundingRegion;
         destViewController.mapItem=[self.places objectAtIndex:0];
