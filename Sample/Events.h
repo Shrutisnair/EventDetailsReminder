@@ -10,8 +10,6 @@
 
 @interface Events : NSObject
 
-   
-    
     @property(nonatomic) NSString *name;
     @property(nonatomic)  NSString *id;
     @property(nonatomic) NSString *location;
