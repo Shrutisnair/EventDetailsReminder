@@ -199,10 +199,10 @@
 				817B4A961B53945A0072778B /* AppDelegate.m */,
 				817B4A9B1B53945A0072778B /* Main.storyboard */,
 				817B4A9E1B53945A0072778B /* Assets.xcassets */,
+				81E436221B54FFE000F95F7E /* events.json */,
 				817B4AA01B53945A0072778B /* LaunchScreen.storyboard */,
 				817B4AA31B53945A0072778B /* Info.plist */,
 				817B4A921B53945A0072778B /* Supporting Files */,
-				81E436221B54FFE000F95F7E /* events.json */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
