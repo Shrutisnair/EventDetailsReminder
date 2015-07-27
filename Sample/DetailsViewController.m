@@ -33,7 +33,15 @@
 @synthesize star4=_star4;
 @synthesize star5=_star5;
 
-
+-(id)init{
+    
+    _badge=0;
+    
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -122,13 +130,15 @@
                                         cancelButtonTitle:@"OK"
                                         otherButtonTitles:nil];
     [alert show];
-    
+    _badge += 1;
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = newDate;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.category = @"myCategoryyh";
     localNotification.alertTitle = self.item.name;
+    localNotification.applicationIconBadgeNumber = _badge;
+   // localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     localNotification.alertBody = @"The event starts in 1 hour";
     localNotification.userInfo = @{ @"title" : self.item.name, @"body" : @"Event starts in one hour"};
   
