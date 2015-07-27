@@ -12,9 +12,6 @@
 
 @interface DetailsViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
-
-//@property UIImage *eventImage;
-
 @property Events *item;
 
 -(IBAction)dismiss;
@@ -40,4 +37,7 @@
 @property (nonatomic, strong) MKLocalSearch *localSearch;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSArray *places;
+
+@property int badge;
+
 @end
