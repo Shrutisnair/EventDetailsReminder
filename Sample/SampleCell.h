@@ -10,6 +10,7 @@
 
 @interface SampleCell : UITableViewCell
 {
+    
 }
     @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
     @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
@@ -20,4 +21,5 @@
     @property (weak, nonatomic) IBOutlet UIImageView *star3;
     @property (weak, nonatomic) IBOutlet UIImageView *star4;
     @property (weak, nonatomic) IBOutlet UIImageView *star5;
+
 @end
