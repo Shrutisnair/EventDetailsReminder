@@ -33,6 +33,8 @@
 		81E034FC1B5678A1006B61A3 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E034FB1B5678A1006B61A3 /* mapViewController.m */; };
 		81E436231B55003700F95F7E /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 81E436221B54FFE000F95F7E /* events.json */; };
 		81E4362B1B5533A600F95F7E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E4362A1B5533A600F95F7E /* DetailsViewController.m */; };
+		81E462AE1B67586E007957AB /* events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81E462AC1B67586E007957AB /* events.xcdatamodeld */; };
+		81E462B21B675B11007957AB /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E462B11B675B11007957AB /* Entity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,10 @@
 		81E436221B54FFE000F95F7E /* events.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 		81E436291B5533A600F95F7E /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		81E4362A1B5533A600F95F7E /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		81E462AD1B67586E007957AB /* events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = events.xcdatamodel; sourceTree = "<group>"; };
+		81E462AF1B675B11007957AB /* Entity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		81E462B01B675B11007957AB /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		81E462B11B675B11007957AB /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +205,10 @@
 				817B4A961B53945A0072778B /* AppDelegate.m */,
 				817B4A9B1B53945A0072778B /* Main.storyboard */,
 				817B4A9E1B53945A0072778B /* Assets.xcassets */,
+				81E462AC1B67586E007957AB /* events.xcdatamodeld */,
+				81E462AF1B675B11007957AB /* Entity+CoreDataProperties.h */,
+				81E462B01B675B11007957AB /* Entity.h */,
+				81E462B11B675B11007957AB /* Entity.m */,
 				81E436221B54FFE000F95F7E /* events.json */,
 				817B4AA01B53945A0072778B /* LaunchScreen.storyboard */,
 				817B4AA31B53945A0072778B /* Info.plist */,
@@ -488,8 +498,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E462B21B675B11007957AB /* Entity.m in Sources */,
 				81DF6CD11B5CB0A4005C33D9 /* Events.m in Sources */,
 				817B4A9A1B53945A0072778B /* ViewController.m in Sources */,
+				81E462AE1B67586E007957AB /* events.xcdatamodeld in Sources */,
 				81E4362B1B5533A600F95F7E /* DetailsViewController.m in Sources */,
 				81E034F91B5660BD006B61A3 /* PlaceAnnotation.m in Sources */,
 				817B4AEB1B53D24E0072778B /* SampleCell.m in Sources */,
@@ -841,6 +853,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81E462AC1B67586E007957AB /* events.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81E462AD1B67586E007957AB /* events.xcdatamodel */,
+			);
+			currentVersion = 81E462AD1B67586E007957AB /* events.xcdatamodel */;
+			name = events.xcdatamodeld;
+			path = ../events.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 817B4A871B53945A0072778B /* Project object */;
 }
