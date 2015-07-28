@@ -2,7 +2,7 @@
 //  Entity+CoreDataProperties.h
 //  Sample
 //
-//  Created by Shruthi on 17/07/15.
+//  Created by Shruthi on 28/07/15.
 //  Copyright © 2015 Shruthi. All rights reserved.
 //
 //  Delete this file and regenerate it using "Create NSManagedObject Subclass…"
@@ -15,13 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Entity (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSString *date;
-@property (nullable, nonatomic, retain) NSString *time;
-@property (nullable, nonatomic, retain) NSString *location;
-@property (nullable, nonatomic, retain) NSString *address;
-@property (nullable, nonatomic, retain) NSString *id;
-@property (nullable, nonatomic, retain) NSString *desc;
+@property (nullable, nonatomic, retain) NSString *eventAddress;
+@property (nullable, nonatomic, retain) NSString *eventDate;
+@property (nullable, nonatomic, retain) NSString *eventDesc;
+@property (nullable, nonatomic, retain) NSString *eventId;
+@property (nullable, nonatomic, retain) NSString *eventLocation;
+@property (nullable, nonatomic, retain) NSString *eventName;
+@property (nullable, nonatomic, retain) NSString *eventRating;
+@property (nullable, nonatomic, retain) NSString *eventTime;
 
 @end
 

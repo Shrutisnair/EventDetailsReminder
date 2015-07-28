@@ -17,7 +17,7 @@
         "description":"A classical dance show",
         "address":"Pratibha Auditorium, Mumbai, Maharashtra",
         "date":"28-07-2015",
-        "time": "10:53",
+        "time": "12:19",
         "location":" Mumbai",
         "rating":"4"
     },
@@ -38,7 +38,7 @@
         "description":"Monsoon Melodies by Sawani Shende",
         "address":"Little Theatre, Naiman Road, Mumbai, Maharashtra",
         "date": "28-07-2015",
-        "time": "10:28",
+        "time": "17:11",
         "location": "Mumbai",
         "rating":"4"
     },
@@ -52,7 +52,29 @@
         "time": "19:30",
         "location": "Kolkata",
         "rating":"2"
-    }
+    },
+    {
+    "eventID": "6",
+    "eventName": "Krishna Rang",
+    "description":"Flute recital by Pt.Ajay Prasanna, Light Classical vocal recital by Vidhi Sharma & Kathak recital by Mahua Shankar",
+ 
+    "address":"India Habitat Centre, Lodhi Road, New Delhi",
+    "date": "25-01-2016",
+    "time": "19:30",
+    "location": "New Delhi",
+    "rating":"3"
+ },
+ {
+    "eventID": "7",
+    "eventName": "Rangavaibhavam",
+    "description":"Carnatic Vocal by Bangalore Brothers / Vittala Rangan / Ambattur Babu / Amruth Kumar N",
+ 
+    "address":"Raghavendra Mutt, Yelahanka New Town,Bangalore -64",
+    "date": "25-01-2016",
+    "time": "18:30",
+    "location": "Bangalore",
+    "rating":"4"
+ }
 ]
 
 
