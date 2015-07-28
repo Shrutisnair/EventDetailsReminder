@@ -16,8 +16,8 @@
         "eventName": "Ninad Concert",
         "description":"A classical dance show",
         "address":"Pratibha Auditorium, Mumbai, Maharashtra",
-        "date":"27-07-2015",
-        "time": "17:41",
+        "date":"28-07-2015",
+        "time": "10:53",
         "location":" Mumbai",
         "rating":"4"
     },
@@ -37,8 +37,8 @@
         "eventName": "Megharanjini",
         "description":"Monsoon Melodies by Sawani Shende",
         "address":"Little Theatre, Naiman Road, Mumbai, Maharashtra",
-        "date": "27-07-2015",
-        "time": "17:42",
+        "date": "28-07-2015",
+        "time": "10:28",
         "location": "Mumbai",
         "rating":"4"
     },
