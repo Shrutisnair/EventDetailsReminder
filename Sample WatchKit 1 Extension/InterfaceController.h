@@ -11,4 +11,10 @@
 
 @interface InterfaceController : WKInterfaceController
 
+{
+    NSMutableArray *event;
+}
+
+@property (weak, nonatomic) IBOutlet WKInterfaceTable* table;
+
 @end
