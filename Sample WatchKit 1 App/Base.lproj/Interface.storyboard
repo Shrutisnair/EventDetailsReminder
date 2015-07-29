@@ -8,7 +8,27 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <table alignment="left" id="j4A-eM-fKJ">
+                            <items>
+                                <tableRow identifier="row" id="SvL-OP-nhg" customClass="BaseTableView">
+                                    <group key="rootItem" width="1" alignment="left" id="xcH-SA-lYw">
+                                        <items>
+                                            <label width="109" height="30" alignment="left" text="Label" id="i0g-nA-9qb"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="i0g-nA-9qb" id="Z4R-dV-MzJ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="j4A-eM-fKJ" id="Jaf-AX-ffO"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
