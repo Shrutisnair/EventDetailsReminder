@@ -17,6 +17,10 @@
 		817B4AB81B53945A0072778B /* SampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817B4AB71B53945A0072778B /* SampleUITests.m */; };
 		817B4AEB1B53D24E0072778B /* SampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 817B4AEA1B53D24E0072778B /* SampleCell.m */; };
 		819F12171B6098630084F39E /* reminderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F12161B6098630084F39E /* reminderController.m */; };
+		81DAE04B1B68DB6B00A8D897 /* watchevents.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DAE04A1B68DB6B00A8D897 /* watchevents.json */; };
+		81DAE04C1B68DBA000A8D897 /* watchevents.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DAE04A1B68DB6B00A8D897 /* watchevents.json */; };
+		81DAE04F1B68DFC900A8D897 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DAE04E1B68DFC900A8D897 /* BaseTableView.m */; };
+		81DAE0501B68F29300A8D897 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DAE04E1B68DFC900A8D897 /* BaseTableView.m */; };
 		81DCCE4B1B5E470500E152DF /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DCCE4A1B5E470500E152DF /* InterfaceController.m */; };
 		81DCCE4E1B5E470500E152DF /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DCCE4D1B5E470500E152DF /* NotificationController.m */; };
 		81DCCE501B5E470500E152DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81DCCE4F1B5E470500E152DF /* Assets.xcassets */; };
@@ -103,6 +107,9 @@
 		817B4AEA1B53D24E0072778B /* SampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCell.m; sourceTree = "<group>"; };
 		819F12151B6098630084F39E /* reminderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reminderController.h; sourceTree = "<group>"; };
 		819F12161B6098630084F39E /* reminderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reminderController.m; sourceTree = "<group>"; };
+		81DAE04A1B68DB6B00A8D897 /* watchevents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watchevents.json; sourceTree = SOURCE_ROOT; };
+		81DAE04D1B68DFC900A8D897 /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTableView.h; path = "Sample WatchKit 1 Extension/BaseTableView.h"; sourceTree = SOURCE_ROOT; };
+		81DAE04E1B68DFC900A8D897 /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTableView.m; path = "Sample WatchKit 1 Extension/BaseTableView.m"; sourceTree = SOURCE_ROOT; };
 		81DCCE451B5E470500E152DF /* Sample WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sample WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DCCE481B5E470500E152DF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		81DCCE491B5E470500E152DF /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -246,11 +253,14 @@
 		81DCCE461B5E470500E152DF /* Sample WatchKit 1 Extension */ = {
 			isa = PBXGroup;
 			children = (
+				81DAE04D1B68DFC900A8D897 /* BaseTableView.h */,
+				81DAE04E1B68DFC900A8D897 /* BaseTableView.m */,
 				81DCCE491B5E470500E152DF /* InterfaceController.h */,
 				81DCCE4A1B5E470500E152DF /* InterfaceController.m */,
 				81DCCE4C1B5E470500E152DF /* NotificationController.h */,
 				81DCCE4D1B5E470500E152DF /* NotificationController.m */,
 				81DCCE4F1B5E470500E152DF /* Assets.xcassets */,
+				81DAE04A1B68DB6B00A8D897 /* watchevents.json */,
 				81DCCE511B5E470500E152DF /* Info.plist */,
 				81DCCE471B5E470500E152DF /* Supporting Files */,
 			);
@@ -453,6 +463,7 @@
 			files = (
 				81DF6CD31B5CE177005C33D9 /* images in Resources */,
 				81E436231B55003700F95F7E /* events.json in Resources */,
+				81DAE04B1B68DB6B00A8D897 /* watchevents.json in Resources */,
 				817B4AA21B53945A0072778B /* LaunchScreen.storyboard in Resources */,
 				817B4A9F1B53945A0072778B /* Assets.xcassets in Resources */,
 				817B4A9D1B53945A0072778B /* Main.storyboard in Resources */,
@@ -477,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DAE04C1B68DBA000A8D897 /* watchevents.json in Resources */,
 				81DCCE501B5E470500E152DF /* Assets.xcassets in Resources */,
 				81DCCE551B5E470600E152DF /* Sample WatchKit 1 App.app in Resources */,
 			);
@@ -507,6 +519,7 @@
 				817B4AEB1B53D24E0072778B /* SampleCell.m in Sources */,
 				81E034FC1B5678A1006B61A3 /* mapViewController.m in Sources */,
 				817B4A971B53945A0072778B /* AppDelegate.m in Sources */,
+				81DAE04F1B68DFC900A8D897 /* BaseTableView.m in Sources */,
 				81DF6CEC1B5CE3A5005C33D9 /* Calculate.m in Sources */,
 				817B4A941B53945A0072778B /* main.m in Sources */,
 				819F12171B6098630084F39E /* reminderController.m in Sources */,
@@ -533,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DAE0501B68F29300A8D897 /* BaseTableView.m in Sources */,
 				81DCCE4E1B5E470500E152DF /* NotificationController.m in Sources */,
 				81DCCE4B1B5E470500E152DF /* InterfaceController.m in Sources */,
 			);
