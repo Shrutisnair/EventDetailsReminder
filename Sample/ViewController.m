@@ -31,16 +31,16 @@
     return context;
 }
 
-- (int) rowCount {
+/*- (int) rowCount {
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     return [self.devices count];
     
-}
+}*/
 
-- (void) copyToDatabase {
+/*- (void) copyToDatabase {
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"events" ofType:@"json"];
     
@@ -87,10 +87,10 @@
             NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);    }
 
 }
-}
+}*/
 
 
-- (void) fetchFromJson {
+/*- (void) fetchFromJson {
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"events" ofType:@"json"];
     
@@ -122,17 +122,17 @@
     }
     
 }
-
+*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if([self rowCount]==0) {
+   /* if([self rowCount]==0) {
         [self copyToDatabase];
     }
     else {
-        [self fetchFromJson];
-    }
+        [self fetchFromJson]; */
+    
    
 
     //code for deleting the contents of database
@@ -151,9 +151,39 @@
     }
     NSError *saveError = nil;
     [myContext save:&saveError]; */
+
+NSString *filePath = [[NSBundle mainBundle] pathForResource:@"events" ofType:@"json"];
+
+NSString* jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+
+event=[[NSMutableArray alloc]init];
+
+NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+
+NSError *jsonError;
+id allKeys = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
+
+
+for (int i=0; i<[allKeys count]; i++) {
+    NSDictionary *arrayResult = [allKeys objectAtIndex:i];
     
+    details = [[Events alloc]init];
     
-    }
+    details.name=[arrayResult objectForKey:@"eventName"];
+    details.time=[arrayResult objectForKey:@"time"];
+    details.date=[arrayResult objectForKey:@"date"];
+    details.location=[arrayResult objectForKey:@"location"];
+    details.address=[arrayResult objectForKey:@"address"];
+    details.desc=[arrayResult objectForKey:@"description"];
+    details.id=[arrayResult objectForKey:@"eventId"];
+    details.rating=[arrayResult objectForKey:@"rating"];
+    
+    [event addObject:details];
+}
+
+
+
+}
 
 
 
@@ -166,7 +196,7 @@
 
 
 
-- (void)viewDidAppear:(BOOL)animated
+/*- (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
@@ -175,7 +205,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     [self.tableView reloadData];
-}
+}*/
 
 
 
@@ -185,9 +215,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   // return [event count];
+    return [event count];
    
-    return self.devices.count;
+   // return self.devices.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -202,13 +232,20 @@
     }
     
     
-    NSManagedObject *device = [self.devices objectAtIndex:indexPath.row];
-    [cell.nameLabel setText:[device valueForKey:@"eventName"]];
+   /* NSManagedObject *device = [self.devices objectAtIndex:indexPath.row];
+    [cell.nameLabel.text:[device valueForKey:@"eventName"]];
     [cell.timeLabel setText:[device valueForKey:@"eventTime"]];
     [cell.dateLabel setText:[device valueForKey:@"eventDate"]];
-    [cell.locationLabel setText:[device valueForKey:@"eventLocation"]];
+    [cell.locationLabel setText:[device valueForKey:@"eventLocation"]]; */
     
-    switch ([[device valueForKey:@"eventRating"] intValue]) {
+    Events *temp=[[Events alloc] init];
+    temp = [event objectAtIndex:indexPath.row];
+    cell.nameLabel.text=temp.name;
+    cell.timeLabel.text=temp.time;
+    cell.dateLabel.text=temp.date;
+    cell.locationLabel.text=temp.location;
+    
+    switch ([temp.rating intValue]) {
         case 1:
             cell.star1.image=[UIImage imageNamed:@"brightstar"];
             cell.star2.image=[UIImage imageNamed:@"darkstar"];
