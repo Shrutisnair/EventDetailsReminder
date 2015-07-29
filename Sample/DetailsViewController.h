@@ -14,6 +14,9 @@
 
 @property Events *item;
 
+//@property (strong) NSMutableArray *devices;
+
+
 -(IBAction)dismiss;
 -(IBAction)subscribe;
 
