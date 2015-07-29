@@ -9,7 +9,7 @@
 #import "DetailsViewController.h"
 #import "PlaceAnnotation.h"
 #import"mapViewController.h"
-
+//#import <CoreData/CoreData.h>
 
 @interface DetailsViewController ()
 
@@ -32,6 +32,15 @@
 @synthesize star3=_star3;
 @synthesize star4=_star4;
 @synthesize star5=_star5;
+
+/*- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}*/
 
 
 - (void)viewDidLoad {
@@ -106,7 +115,27 @@
 
 - (IBAction)subscribe{
     
+  /*  NSManagedObjectContext *context = [self managedObjectContext];
     
+    NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Entity" inManagedObjectContext:context];
+    
+    
+    [newDevice setValue:item.name forKey:@"eventName"];
+    [newDevice setValue:item.time forKey:@"eventTime"];
+    [newDevice setValue:item.date forKey:@"eventDate"];
+    [newDevice setValue:item.location forKey:@"eventLocation"];
+    [newDevice setValue:item.address forKey:@"eventAddress"];
+    [newDevice setValue:item.desc forKey:@"eventDesc"];
+    [newDevice setValue:item.id forKey:@"eventId"];
+    [newDevice setValue:item.rating forKey:@"eventRating"];
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);    }
+    
+    
+*/
     NSString* dateString = [NSString stringWithFormat:@"%@T%@:00", self.item.date,self.item.time];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy'T'HH:mm:ss"];
