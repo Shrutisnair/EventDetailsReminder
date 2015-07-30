@@ -11,7 +11,7 @@
 @implementation Events
 
 @synthesize name;
-@synthesize id;
+@synthesize eventid;
 @synthesize location;
 @synthesize address;
 @synthesize date;

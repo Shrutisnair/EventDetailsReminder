@@ -9,9 +9,12 @@
 #import "DetailsViewController.h"
 #import "PlaceAnnotation.h"
 #import"mapViewController.h"
-//#import <CoreData/CoreData.h>
+#import <CoreData/CoreData.h>
 
 @interface DetailsViewController ()
+{
+    NSMutableArray *dataObjects;
+}
 
 @end
 
@@ -41,6 +44,32 @@
     }
     return context;
 }*/
+
+- (NSManagedObjectContext *)managedObjectContext {
+    // NSManagedObjectContext *context = nil;
+    
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"events" withExtension:@"momd"];
+    NSManagedObjectModel * managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
+    
+    
+    NSURL *storeURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.qburst.watch"];
+    storeURL = [storeURL URLByAppendingPathComponent:@"Sample.sqlite"];
+    
+    NSPersistentStore *store = nil;
+    NSPersistentStoreCoordinator *coordinator=[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
+    NSError *error=nil;
+    store = [coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                      configuration:nil
+                                                URL:storeURL
+                                            options:nil
+                                              error:&error];
+    
+    NSManagedObjectContext * managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [managedObjectContext setPersistentStoreCoordinator:coordinator];
+    
+    return managedObjectContext;
+}
 
 
 - (void)viewDidLoad {
@@ -115,7 +144,37 @@
 
 - (IBAction)subscribe{
     
-  /*  NSManagedObjectContext *context = [self managedObjectContext];
+    int subscribed =0;
+    
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    //   [self.tableView reloadData];
+    
+    
+    
+    dataObjects=[[NSMutableArray alloc]init];
+    
+    for (NSInteger i=0; i<self.devices.count; i++) {
+        //  NSDictionary *arrayResult = [allKeys objectAtIndex:i]; */
+        
+        
+        
+        NSManagedObject *device = [self.devices objectAtIndex:i];
+      //  [dataObjects addObject:[device valueForKey:@"eventName"]];
+          // NSLog(@"%@",item.eventid);
+        
+        if([item.eventid isEqualToString:[device valueForKey:@"eventId"]])
+        {
+            subscribed =1;
+         
+            NSLog(@"Already Subscribed");
+            break;
+        }
+    }
+    
+    if( subscribed ==0) {
+    NSManagedObjectContext *context = [self managedObjectContext];
     
     NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Entity" inManagedObjectContext:context];
     
@@ -126,7 +185,7 @@
     [newDevice setValue:item.location forKey:@"eventLocation"];
     [newDevice setValue:item.address forKey:@"eventAddress"];
     [newDevice setValue:item.desc forKey:@"eventDesc"];
-    [newDevice setValue:item.id forKey:@"eventId"];
+    [newDevice setValue:item.eventid forKey:@"eventId"];
     [newDevice setValue:item.rating forKey:@"eventRating"];
     
     NSError *error = nil;
@@ -134,8 +193,8 @@
     if (![context save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);    }
     
-    
-*/
+   // NSLog(@"Event name;%@",[newDevice valueForKey:@"eventName"]);
+    }
     NSString* dateString = [NSString stringWithFormat:@"%@T%@:00", self.item.date,self.item.time];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy'T'HH:mm:ss"];

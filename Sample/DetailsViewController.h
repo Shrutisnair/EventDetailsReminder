@@ -12,9 +12,9 @@
 
 @interface DetailsViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
-@property Events *item;
+@property(strong) Events *item;
 
-//@property (strong) NSMutableArray *devices;
+@property (strong) NSMutableArray *devices;
 
 
 -(IBAction)dismiss;

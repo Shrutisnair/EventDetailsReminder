@@ -11,7 +11,7 @@
 @interface Events : NSObject
 
     @property(nonatomic) NSString *name;
-    @property(nonatomic)  NSString *id;
+    @property(nonatomic)  NSString *eventid;
     @property(nonatomic) NSString *location;
     @property(nonatomic) NSString *address;
     @property(nonatomic) NSString *date;

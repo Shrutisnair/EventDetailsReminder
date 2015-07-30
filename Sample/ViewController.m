@@ -175,7 +175,7 @@ for (int i=0; i<[allKeys count]; i++) {
     details.location=[arrayResult objectForKey:@"location"];
     details.address=[arrayResult objectForKey:@"address"];
     details.desc=[arrayResult objectForKey:@"description"];
-    details.id=[arrayResult objectForKey:@"eventId"];
+    details.eventid=[arrayResult objectForKey:@"eventID"];
     details.rating=[arrayResult objectForKey:@"rating"];
     
     [event addObject:details];

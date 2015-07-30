@@ -10,6 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
+                        <label width="1" alignment="left" text="My Events" id="gpM-UY-e3l"/>
                         <table alignment="left" id="j4A-eM-fKJ">
                             <items>
                                 <tableRow identifier="row" id="SvL-OP-nhg" customClass="BaseTableView">
@@ -30,7 +31,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="171" y="306"/>
+        </scene>
+        <!--Unsubscribe-->
+        <scene sceneID="pw4-Vl-SWh">
+            <objects>
+                <controller identifier="Unsubscribe" hidesWhenLoading="NO" id="sQs-8x-Dxa" customClass="UnsubscribeInterfaceController">
+                    <items>
+                        <label width="119" height="33" alignment="left" id="CvS-BQ-hm4"/>
+                    </items>
+                    <connections>
+                        <outlet property="selectEvent" destination="CvS-BQ-hm4" id="odA-AX-ZTO"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="368" y="306"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="8cf-Ma-xT8">
@@ -52,7 +67,7 @@
                     </items>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="585" y="336"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
