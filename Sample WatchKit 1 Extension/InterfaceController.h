@@ -12,7 +12,7 @@
 @interface InterfaceController : WKInterfaceController
 
 @property (weak, nonatomic) IBOutlet WKInterfaceTable* table;
-
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel* count;
 
 @property (strong) NSMutableArray *devices;
 

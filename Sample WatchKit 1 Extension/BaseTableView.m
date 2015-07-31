@@ -11,6 +11,7 @@
 
 @implementation BaseTableView
 
-@synthesize label;
+@synthesize nameLabel;
+@synthesize dateLabel;
 
 @end

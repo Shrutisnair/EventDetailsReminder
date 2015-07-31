@@ -12,5 +12,8 @@
 @interface UnsubscribeInterfaceController : WKInterfaceController
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel* selectEvent;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel* date;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel* time;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel* location;
 
 @end

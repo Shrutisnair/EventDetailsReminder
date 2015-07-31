@@ -31,6 +31,8 @@
 		81DCCE5B1B5E470600E152DF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DCCE591B5E470600E152DF /* Interface.storyboard */; };
 		81DCCE5D1B5E470600E152DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81DCCE5C1B5E470600E152DF /* Assets.xcassets */; };
 		81DCCE611B5E470600E152DF /* Sample WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81DCCE451B5E470500E152DF /* Sample WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		81DD3EBF1B6B25E70088E93B /* WatchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DD3EBE1B6B25E70088E93B /* WatchEvent.m */; };
+		81DD3EC11B6B38570088E93B /* Clock-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DD3EC01B6B38570088E93B /* Clock-Small.png */; };
 		81DE8FAC1B5630BF008A17AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DE8FAB1B5630BF008A17AF /* CoreLocation.framework */; };
 		81DE8FAE1B5630CE008A17AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DE8FAD1B5630CE008A17AF /* MapKit.framework */; };
 		81DF6CD11B5CB0A4005C33D9 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DF6CD01B5CB0A4005C33D9 /* Events.m */; };
@@ -133,6 +135,9 @@
 		81DCCE5A1B5E470600E152DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		81DCCE5C1B5E470600E152DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81DCCE5E1B5E470600E152DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81DD3EBD1B6B25E70088E93B /* WatchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchEvent.h; sourceTree = "<group>"; };
+		81DD3EBE1B6B25E70088E93B /* WatchEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchEvent.m; sourceTree = "<group>"; };
+		81DD3EC01B6B38570088E93B /* Clock-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Clock-Small.png"; path = "Sample/Assets.xcassets/images/clock.imageset/Clock-Small.png"; sourceTree = SOURCE_ROOT; };
 		81DE8FAB1B5630BF008A17AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		81DE8FAD1B5630CE008A17AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		81DF6CCF1B5CB0A4005C33D9 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
@@ -190,12 +195,10 @@
 		815C21171B6A327500F0AC43 /* Interface Controller */ = {
 			isa = PBXGroup;
 			children = (
-				815C21081B69D84C00F0AC43 /* UnsubscribeInterfaceController.m */,
 				815C21071B69D84C00F0AC43 /* UnsubscribeInterfaceController.h */,
-				81DCCE4D1B5E470500E152DF /* NotificationController.m */,
-				81DCCE4C1B5E470500E152DF /* NotificationController.h */,
-				81DCCE4A1B5E470500E152DF /* InterfaceController.m */,
+				815C21081B69D84C00F0AC43 /* UnsubscribeInterfaceController.m */,
 				81DCCE491B5E470500E152DF /* InterfaceController.h */,
+				81DCCE4A1B5E470500E152DF /* InterfaceController.m */,
 			);
 			name = "Interface Controller";
 			sourceTree = "<group>";
@@ -205,6 +208,8 @@
 			children = (
 				81DAE04D1B68DFC900A8D897 /* BaseTableView.h */,
 				81DAE04E1B68DFC900A8D897 /* BaseTableView.m */,
+				81DD3EBD1B6B25E70088E93B /* WatchEvent.h */,
+				81DD3EBE1B6B25E70088E93B /* WatchEvent.m */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 		817B4A911B53945A0072778B /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				81DD3EC41B6B48F20088E93B /* Core Data */,
 				815C210B1B69F45C00F0AC43 /* Sample.entitlements */,
 				81E108491B61E8BA00022407 /* Utilities */,
 				81E108481B61E7A200022407 /* View Controllers */,
@@ -247,9 +253,6 @@
 				817B4A9B1B53945A0072778B /* Main.storyboard */,
 				817B4A9E1B53945A0072778B /* Assets.xcassets */,
 				81E462AC1B67586E007957AB /* events.xcdatamodeld */,
-				81E462B11B675B11007957AB /* Entity.m */,
-				81E462AF1B675B11007957AB /* Entity+CoreDataProperties.h */,
-				81E462B01B675B11007957AB /* Entity.h */,
 				81E436221B54FFE000F95F7E /* events.json */,
 				817B4AA01B53945A0072778B /* LaunchScreen.storyboard */,
 				817B4AA31B53945A0072778B /* Info.plist */,
@@ -287,13 +290,12 @@
 		81DCCE461B5E470500E152DF /* Sample WatchKit 1 Extension */ = {
 			isa = PBXGroup;
 			children = (
+				81DD3EC31B6B48CC0088E93B /* Core data */,
+				81DD3EC21B6B48A00088E93B /* Notification Controller */,
 				815C21181B6A32B200F0AC43 /* Utilites */,
 				815C21171B6A327500F0AC43 /* Interface Controller */,
 				815C210A1B69F19A00F0AC43 /* Sample WatchKit 1 Extension.entitlements */,
-				815C21151B6A2BAE00F0AC43 /* Entity+CoreDataProperties.h */,
 				815C210F1B6A259800F0AC43 /* events.xcdatamodeld */,
-				815C21131B6A2BA500F0AC43 /* Entity.m */,
-				815C21121B6A2B9200F0AC43 /* Entity.h */,
 				81DCCE4F1B5E470500E152DF /* Assets.xcassets */,
 				81DAE04A1B68DB6B00A8D897 /* watchevents.json */,
 				81DCCE511B5E470500E152DF /* Info.plist */,
@@ -313,11 +315,41 @@
 		81DCCE581B5E470600E152DF /* Sample WatchKit 1 App */ = {
 			isa = PBXGroup;
 			children = (
+				81DD3EC01B6B38570088E93B /* Clock-Small.png */,
 				81DCCE591B5E470600E152DF /* Interface.storyboard */,
 				81DCCE5C1B5E470600E152DF /* Assets.xcassets */,
 				81DCCE5E1B5E470600E152DF /* Info.plist */,
 			);
 			path = "Sample WatchKit 1 App";
+			sourceTree = "<group>";
+		};
+		81DD3EC21B6B48A00088E93B /* Notification Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81DCCE4C1B5E470500E152DF /* NotificationController.h */,
+				81DCCE4D1B5E470500E152DF /* NotificationController.m */,
+			);
+			name = "Notification Controller";
+			sourceTree = "<group>";
+		};
+		81DD3EC31B6B48CC0088E93B /* Core data */ = {
+			isa = PBXGroup;
+			children = (
+				815C21121B6A2B9200F0AC43 /* Entity.h */,
+				815C21131B6A2BA500F0AC43 /* Entity.m */,
+				815C21151B6A2BAE00F0AC43 /* Entity+CoreDataProperties.h */,
+			);
+			name = "Core data";
+			sourceTree = "<group>";
+		};
+		81DD3EC41B6B48F20088E93B /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				81E462AF1B675B11007957AB /* Entity+CoreDataProperties.h */,
+				81E462B01B675B11007957AB /* Entity.h */,
+				81E462B11B675B11007957AB /* Entity.m */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		81E108481B61E7A200022407 /* View Controllers */ = {
@@ -547,6 +579,7 @@
 			files = (
 				81DCCE5D1B5E470600E152DF /* Assets.xcassets in Resources */,
 				81DCCE5B1B5E470600E152DF /* Interface.storyboard in Resources */,
+				81DD3EC11B6B38570088E93B /* Clock-Small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				815C21141B6A2BA500F0AC43 /* Entity.m in Sources */,
+				81DD3EBF1B6B25E70088E93B /* WatchEvent.m in Sources */,
 				815C21111B6A259800F0AC43 /* events.xcdatamodeld in Sources */,
 				81DAE0501B68F29300A8D897 /* BaseTableView.m in Sources */,
 				81DCCE4E1B5E470500E152DF /* NotificationController.m in Sources */,

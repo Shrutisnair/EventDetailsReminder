@@ -9,11 +9,13 @@
 #import "InterfaceController.h"
 #import "BaseTableView.h"
 #import <CoreData/CoreData.h>
+#import "WatchEvent.h"
 
 
 @interface InterfaceController()
 {
       NSMutableArray *dataObjects;
+      WatchEvent *details;
 }
 
 @end
@@ -22,9 +24,9 @@
 @implementation InterfaceController
 
 @synthesize table;
+@synthesize count;
 
 - (NSManagedObjectContext *)managedObjectContext {
-    // NSManagedObjectContext *context = nil;
     
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"events" withExtension:@"momd"];
     NSManagedObjectModel * managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
@@ -49,14 +51,6 @@
     return managedObjectContext;
 }
 
-/*- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}*/
 
 
 - (void)awakeWithContext:(id)context {
@@ -71,16 +65,12 @@
     [self fetchFromJson];
 }
 
+- (void)didDeactivate {
+    // This method is called when watch view controller is no longer visible
+    [super didDeactivate];
+}
+
 -(void)fetchFromJson {
-    
- /*   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"watchevents" ofType:@"json"];
-    
-    NSString* jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    
-    NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSError *jsonError;
-    id allKeys = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];*/
     
     
     
@@ -88,48 +78,49 @@
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
- //   [self.tableView reloadData];
-    
+    count.text=[NSString stringWithFormat:@"My Events (%lu)",(unsigned long)[self.devices count]];
     
       
-    dataObjects=[[NSMutableArray alloc]init];
-  
-   for (NSInteger i=0; i<self.devices.count; i++) {
-      //  NSDictionary *arrayResult = [allKeys objectAtIndex:i]; */
-  
-    
-    
-        NSManagedObject *device = [self.devices objectAtIndex:i];
-        [dataObjects addObject:[device valueForKey:@"eventName"]];
-         }
-    
-    [self configureTableWithData  /*:dataObjects*/];
+    [self configureTableWithData];
 }
 
 
-- (void)configureTableWithData// :(NSMutableArray*)dataObjects
-{
-    [self.table setNumberOfRows:[dataObjects count] withRowType:@"row"];
+- (void)configureTableWithData{
+    
+    dataObjects=[[NSMutableArray alloc]init];
+    [self.table setNumberOfRows:self.devices.count withRowType:@"row"];
     for (NSInteger i = 0; i < self.table.numberOfRows; i++) {
         
-       BaseTableView* theRow = [self.table rowControllerAtIndex:i];
-       [theRow.label setText:[dataObjects objectAtIndex:i]];
+        NSManagedObject *device = [self.devices objectAtIndex:i];
         
-      }
+       details = [[WatchEvent alloc]init];
+        
+        details.name=[device valueForKey:@"eventName"];
+        details.time=[device valueForKey:@"eventTime"];
+        details.date=[device valueForKey:@"eventDate"];
+        details.location=[device valueForKey:@"eventLocation"];
+        details.address=[device valueForKey:@"eventAddress"];
+        details.desc=[device valueForKey:@"eventDesc"];
+        details.eventid=[device valueForKey:@"eventId"];
+        details.rating=[device valueForKey:@"eventRating"];
+        
+        [dataObjects addObject:details];
+        
+       BaseTableView* theRow = [self.table rowControllerAtIndex:i];
+       [theRow.nameLabel setText:[device valueForKey:@"eventName"]];
+        [theRow.dateLabel setText:[device valueForKey:@"eventDate"]];      }
 }
 
 - (void)table:(WKInterfaceTable*)table didSelectRowAtIndex:(NSInteger)rowIndex
 {
-    [self pushControllerWithName:@"Unsubscribe" context:[dataObjects objectAtIndex:rowIndex]];
+    
+    WatchEvent *temp=[[WatchEvent alloc] init];
+    temp=[dataObjects objectAtIndex:rowIndex];
+    
+    [self pushControllerWithName:@"Unsubscribe" context:temp];
 }
 
-/*- (void)pushControllerWithName:(NSString *)Unsubscribe context:(id )context {
-    
-}*/
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    [super didDeactivate];
-}
+
 
 
 

@@ -12,7 +12,6 @@
 @interface BaseTableView : NSObject
 
 
-@property (weak, nonatomic) IBOutlet WKInterfaceLabel* label;
-
-
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel* nameLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel* dateLabel;
 @end

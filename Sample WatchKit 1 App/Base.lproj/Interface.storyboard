@@ -10,23 +10,32 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="1" alignment="left" text="My Events" id="gpM-UY-e3l"/>
+                        <label width="1" alignment="left" textAlignment="center" id="vSP-pS-C3y"/>
                         <table alignment="left" id="j4A-eM-fKJ">
                             <items>
                                 <tableRow identifier="row" id="SvL-OP-nhg" customClass="BaseTableView">
-                                    <group key="rootItem" width="1" alignment="left" id="xcH-SA-lYw">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="xcH-SA-lYw">
                                         <items>
-                                            <label width="109" height="30" alignment="left" text="Label" id="i0g-nA-9qb"/>
+                                            <label width="1" alignment="left" text="Label" id="iCH-Al-dQE"/>
+                                            <group width="1" alignment="left" id="vNt-28-z0J">
+                                                <items>
+                                                    <imageView width="20" height="17" alignment="left" image="calendar" id="aYZ-pO-ch7"/>
+                                                    <label alignment="left" text="Label" id="pUC-0J-b6a"/>
+                                                </items>
+                                            </group>
                                         </items>
+                                        <color key="backgroundColor" red="0.40153488009999999" green="0.40153488009999999" blue="0.40153488009999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
-                                        <outlet property="label" destination="i0g-nA-9qb" id="Z4R-dV-MzJ"/>
+                                        <outlet property="dateLabel" destination="pUC-0J-b6a" id="hGi-p8-VMG"/>
+                                        <outlet property="nameLabel" destination="iCH-Al-dQE" id="0Qm-ru-YKH"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
+                        <outlet property="count" destination="vSP-pS-C3y" id="ZM3-kQ-fE2"/>
                         <outlet property="table" destination="j4A-eM-fKJ" id="Jaf-AX-ffO"/>
                     </connections>
                 </controller>
@@ -39,9 +48,37 @@
                 <controller identifier="Unsubscribe" hidesWhenLoading="NO" id="sQs-8x-Dxa" customClass="UnsubscribeInterfaceController">
                     <items>
                         <label width="119" height="33" alignment="left" id="CvS-BQ-hm4"/>
+                        <group width="1" alignment="left" id="GNn-Y9-itc">
+                            <items>
+                                <imageView width="20" height="17" alignment="left" image="calendar" id="rp8-6s-9yO"/>
+                                <label alignment="left" id="4hc-NL-y2H"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="lgZ-Yn-Tvt">
+                            <items>
+                                <imageView width="20" height="17" alignment="left" image="clock" id="NP0-a8-xnP"/>
+                                <label alignment="left" id="svb-rR-UEb"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Nza-bF-f7c">
+                            <items>
+                                <imageView width="20" height="17" alignment="left" image="location" id="wDo-ch-lcB"/>
+                                <label alignment="left" id="GwA-V1-12J"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Unsubscribe" id="OuT-YW-fty">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.92831689910000004" green="0.92837737450000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="Unsubscribe" destination="sQs-8x-Dxa" id="Gth-eF-m8z"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
+                        <outlet property="date" destination="4hc-NL-y2H" id="Alo-ke-SaW"/>
+                        <outlet property="location" destination="GwA-V1-12J" id="Pe9-1w-JmH"/>
                         <outlet property="selectEvent" destination="CvS-BQ-hm4" id="odA-AX-ZTO"/>
+                        <outlet property="time" destination="svb-rR-UEb" id="ncB-4H-1XP"/>
                     </connections>
                 </controller>
             </objects>

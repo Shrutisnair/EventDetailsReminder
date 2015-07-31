@@ -127,9 +127,59 @@
     self.etimeLabel.text=item.time;
     self.eaddressLabel.text=item.address;
     self.edescLabel.text=item.desc;
-    self.mapView.delegate = self;
+  //  self.mapView.delegate = self;
     
     }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //    MKCoordinateRegion newRegion;
+    //    newRegion.center.latitude = self.userLocation.latitude;
+    //    newRegion.center.longitude = self.userLocation.longitude;
+    //
+    //    newRegion.span.latitudeDelta = 0.3;
+    //    newRegion.span.longitudeDelta = 0.3;
+    //
+    //    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    //
+    //    request.naturalLanguageQuery = item.location;
+    //    request.region = newRegion;
+    //    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
+    //    {
+    //        self.places = [response mapItems];
+    //        self.boundingRegion = response.boundingRegion;
+    //
+    //        MKMapItem *mapItem = [self.mapItemList objectAtIndex:0];
+    //         NSLog(@"%@",mapItem.name);
+    //
+    //        [self.mapView setRegion:self.boundingRegion];
+    //
+    //        mapItem = [self.places objectAtIndex:0];
+    //
+    //        // add the single annotation to our map
+    //        PlaceAnnotation *annotation = [[PlaceAnnotation alloc] init];
+    //        annotation.coordinate = mapItem.placemark.location.coordinate;
+    //        annotation.title = mapItem.name;
+    //        annotation.url = mapItem.url;
+    //        [self.mapView addAnnotation:annotation];
+    //
+    //        [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
+    //
+    //        // center the region around this map item's coordinate
+    //        self.mapView.centerCoordinate = mapItem.placemark.coordinate;
+    //    };
+    //
+    // if (self.localSearch != nil)
+    //{
+    //    self.localSearch = nil;
+    //}
+    //self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
+    //
+    //[self.localSearch startWithCompletionHandler:completionHandler];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -225,55 +275,6 @@
   
    }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    
-   
-    MKCoordinateRegion newRegion;
-    newRegion.center.latitude = self.userLocation.latitude;
-    newRegion.center.longitude = self.userLocation.longitude;
-    
-    newRegion.span.latitudeDelta = 0.3;
-    newRegion.span.longitudeDelta = 0.3;
-    
-    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-    
-    request.naturalLanguageQuery = item.location;
-    request.region = newRegion;
-    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
-    {
-        self.places = [response mapItems];
-        self.boundingRegion = response.boundingRegion;
-        
-        MKMapItem *mapItem = [self.mapItemList objectAtIndex:0];
-         NSLog(@"%@",mapItem.name);
-      
-        [self.mapView setRegion:self.boundingRegion];
-    
-        mapItem = [self.places objectAtIndex:0];
-    
-        // add the single annotation to our map
-        PlaceAnnotation *annotation = [[PlaceAnnotation alloc] init];
-        annotation.coordinate = mapItem.placemark.location.coordinate;
-        annotation.title = mapItem.name;
-        annotation.url = mapItem.url;
-        [self.mapView addAnnotation:annotation];
-        
-        [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
-        
-        // center the region around this map item's coordinate
-        self.mapView.centerCoordinate = mapItem.placemark.coordinate;
-    };
-
- if (self.localSearch != nil)
-{
-    self.localSearch = nil;
-}
-self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
-
-[self.localSearch startWithCompletionHandler:completionHandler];
-
-}
 
 #pragma - Navigation
 
